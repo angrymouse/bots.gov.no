@@ -1,0 +1,22 @@
+token: "NzQ0ODg3MzAxODA4NTg2Nzkz.XzpwXA.4DxoyFTq8WJhJKlp66z9wh1Q_ss"
+prefix: "t."
+guilds:
+    main: "761596363795988561"
+    testing: "776944438383214620"
+channels:
+    invite: "https://discord.gg/7FbtuGg"
+    logs: "761597409935228929"
+roles:
+    website: "776981342893375501"
+    tester: "761596581145083914"
+    bots: "761597500771139584"
+    developers: "761597557381529601"
+port: 3080
+color: 0x7289da
+bot:
+    id: "744887301808586793"
+    secret: "84kb4XVNn7dx_xmCUQA6UdKedBtoae06"
+    redirect: "http://localhost:3000/auth/callback"
+    scopes:
+        - identify
+        - guilds.join

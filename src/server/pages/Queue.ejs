@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TopBots | Очередь</title>
+    <%- include("./components/header.ejs") %>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <%- include("./components/navbar.ejs", { bot, user }) %>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h2>Очередь</h2>
+            <p class="lead">Все боты которые ожидают проверки тут.</p>
+            <!-- <hr class="my-4">
+            <p class="lead">
+              <a class="btn btn-primary btn-lg" href="https://discordapp.com/channels/480939855476686849/<%= bot.config.channels.logs %>" role="button">Logs</a>
+            </p> -->
+        </div>
+        <div class="bots-list">
+            <br>
+            <h5>Ждут проверки</h5>
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">Номер</th>
+                    <th scope="col">Префикс</th>
+                    <th scope="col">Имя</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Действия</th>
+                  </tr>
+                </thead>
+                <tbody class="bots-list-body"></tbody>
+            </table> 
+        </div>
+        <div class="progress-list">
+            <br>
+            <h5>В процессе проверки</h5>
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">Номер</th>
+                    <th scope="col">Префикс</th>
+                    <th scope="col">Имя</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Действия</th>
+                  </tr>
+                </thead>
+                <tbody class="progress-list-body"></tbody>
+            </table> 
+        </div>
+    </div>
+</body>
+
+<script>
+var socket = io.connect("/queue");
+const queueTable = $(".bots-list-body");
+const testingTable = $(".progress-list-body");
+
+socket.on("queuePageLoaded", function () {
+    LOG("Connected to Server!", "Requesting data...");
+    socket.emit("queueRequest");
+});
+
+socket.on("queueServerRequest", function () {
+    LOG("New bot has been added!", "Requesting data...");
+    socket.emit("queueRequest");
+});
+
+socket.on("queueData", function (queueBots, queueBotsTesting) {
+    LOG("Data received!");
+    queueTable.html("");
+    testingTable.html("");
+    queueBots.forEach((queueBot, index) => {
+        queueTable.append(getQueueBotHTML(queueBot, index));
+    });
+    queueBotsTesting.forEach((queueBotTest, index) => {
+        testingTable.append(getQueueBotTestingHTML(queueBotTest, index))
+    });
+    LOG("Page Updated!");
+});
+
+function userStartedTesting(userID, botID) {
+    LOG(`Request to test ${botID}`);
+    socket.emit("startTesting", userID, botID);
+}
+
+function userBotDeny(userID, botID) {
+    LOG(`Request to deny ${botID}, awaiting reason`);
+    const reason = prompt("Пожалуйста, введите причину");
+    if(!reason) return LOG(`Request to deny ${botID} failed as no reason was provided.`);
+    LOG(`Request to deny ${botID} is being processed!`);
+    socket.emit("botDecline", userID, botID, reason);
+}
+
+function getQueueBotHTML(queueBot, index) {
+    return (
+`
+<tr class="table-light">
+    ${formatInfo(queueBot, index)}
+    <td>
+        ${getQueueBotButtons(queueBot)}
+        <button type="button" class="btn btn-danger" onclick="userBotDeny('<%= user.id %>', '${queueBot.botID}')" style="margin-right: 10px;">Отклонить</button>
+        <a href="/bots/${queueBot.botID}" type="button" class="btn btn-warning">Просмотр</a>
+    </td>
+</tr>
+`
+    );
+}
+
+function getQueueBotButtons(queueBot) {
+    if(queueBot.inTesting) return `<button type="button" class="btn btn-warning" onclick="userStartedTesting('<%= user.id %>', '${queueBot.botID}')" style="margin-right: 10px;">Начать тестирование</button>`;
+        else return `<a target="__blank" href="https://discordapp.com/oauth2/authorize?client_id=${queueBot.botID}&scope=bot&permissions=8&guild_id=<%= bot.config.guilds.testing %>" class="btn btn-primary" style="margin-right: 10px;">Пригласить</a>`;
+}
+
+function getQueueBotTestingHTML(queueBot, index) {
+    return (
+`
+<tr class="table-light">
+    ${formatInfo(queueBot, index)}
+    <td>
+        <a target="__blank" href="https://discordapp.com/oauth2/authorize?client_id=${queueBot.botID}&scope=bot&permissions=0&guild_id=<%= bot.config.guilds.main %>" class="btn btn-success" style="margin-right: 10px;">Принять</a>
+        <button type="button" class="btn btn-danger" onclick="userBotDeny('<%= user.id %>', '${queueBot.botID}')">Отклонить</button>
+    </td>
+</tr>
+`
+    );
+}
+
+function formatInfo(queueBot, index) {
+    return (
+`
+<th scope="row">${index + 1}.</th>
+<td>${queueBot.prefix}</td>
+<td>${queueBot.tag}</td>
+<td>${queueBot.botID}</td>
+`
+    );
+}
+
+function LOG(...texts) {
+    texts.forEach(text => (console.log(
+        `%c${new Date().toLocaleTimeString([], { hour12: false })}` +
+        ` %c[DEBUG] ${text}`,
+        "color: grey;",
+        "color: none;"
+    )));
+}
+</script>
+</html>

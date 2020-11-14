@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TopBots</title>
+    <%- include("./components/header.ejs") %>
+</head>
+<body>
+    <%- include("./components/navbar.ejs", { bot, user }) %>
+        <center>
+            <div class="alert alert-dismissible alert-success">
+                <strong>Круто!</strong> Твой бот добавлен в очередь.
+            </div>
+        </center>
+    </div>
+</body>
+
+<script>
+$(function () {
+    setTimeout(() => {
+        location.replace("/");
+    }, 10 * 1000);
+});
+</script>
+
+<style>
+.bot-card-avatar {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 757px) {
+    .bot-card-col {
+        margin: 0 30px;
+    }
+}
+</style>
+</html>
