@@ -46,7 +46,7 @@ module.exports.handleAdd = (client, { id, prefix, description: { short, long }, 
         })
         .then(() => {
             const Logs = Guild.channels.cache.get(client.config.channels.logs) || null;
-            Logs.send(`${client.misc.emojis.ticket} <@${user.id}> добавил **${bot.username}#${bot.discriminator}** в очередь.`);
+            Logs.send(` <@${user.id}> добавил **${bot.username}#${bot.discriminator}** в очередь.`);
             resolve();
         })
         .catch(e => {
@@ -78,7 +78,7 @@ module.exports.handleEdit = (client, botID, { prefix, description: { short, long
         }, { where: { botID } })
         .then(() => {
             const Logs = Guild.channels.cache.get(client.config.channels.logs) || null;
-            Logs.send(`${client.misc.emojis.ticket} <@${user.id}> отредактировал **${bot.username}#${bot.discriminator}**.`);
+            Logs.send(`<@${user.id}> отредактировал **${bot.username}#${bot.discriminator}**.`);
             resolve();
         })
         .catch((e) => {
@@ -102,7 +102,7 @@ module.exports.handleDelete = (client, botID, user) => {
         client.database.Bots.destroy({ where: { botID } })
         .then(() => {
             const Logs = Guild.channels.cache.get(client.config.channels.logs) || null;
-            Logs.send(`${client.misc.emojis.trash} <@${user.id}> удалил ${bot ? `**${bot.user.username}#${bot.user.discriminator}**` : `<@${botID}>`}.`);
+            Logs.send(`<@${user.id}> удалил ${bot ? `**${bot.user.username}#${bot.user.discriminator}**` : `<@${botID}>`}.`);
             resolve();
         })
         .catch(() => reject());
@@ -123,13 +123,13 @@ module.exports.handleTest = (client, tester, botID) => {
         const Owner = await Guild.members.fetch(botDB.dataValues.ownerID) || null;
         if(!Owner) {
             await client.database.Bots.destroy({ where: { botID } });
-            Logs.send(`${client.misc.emojis.trash} **${Bot.username}#${Bot.discriminator}**, <@${botDB.dataValues.ownerID}> Удалил бота из очереди.\n**Причина:** Владелец вышел в сервера.`);
+            Logs.send(`**${Bot.username}#${Bot.discriminator}**, <@${botDB.dataValues.ownerID}> Удалил бота из очереди.\n**Причина:** Владелец вышел в сервера.`);
             resolve();
         }
         await client.database.Bots.update({ testedBy: `${tester}` }, { where: { botID: `${botID}` } });
         const Tester = await Guild.members.fetch(tester) || null;
         if(!Tester) resolve();
-        Logs.send(`${client.misc.emojis.ticket} **${Bot.username}#${Bot.discriminator}**, <@${botDB.dataValues.ownerID}>, начал тестироватся **${Tester.user.username}#${Tester.user.discriminator}**.`);
+        Logs.send(`**${Bot.username}#${Bot.discriminator}**, <@${botDB.dataValues.ownerID}>, начал тестироватся **${Tester.user.username}#${Tester.user.discriminator}**.`);
         resolve();
     });
 }
@@ -145,12 +145,12 @@ module.exports.handleDeny = (client, tester, botID, reason) => {
         if(!Bot) resolve();
         const Owner = await Guild.members.fetch(botDB.dataValues.ownerID) || null;
         if(!Owner) {
-            Logs.send(`${client.misc.emojis.trash} **${Bot.username}#${Bot.discriminator}**, <@${botDB.dataValues.ownerID}> Удалил бота из очереди.\n**Причина:** Владелец вышел в сервера.`);
+            Logs.send(`**${Bot.username}#${Bot.discriminator}**, <@${botDB.dataValues.ownerID}> Удалил бота из очереди.\n**Причина:** Владелец вышел в сервера.`);
             resolve();
         }
         const Tester = await Guild.members.fetch(tester) || null;
         if(!Tester) resolve();
-        Logs.send(`${client.misc.emojis.cross} **${Bot.username}#${Bot.discriminator}**, <@${botDB.dataValues.ownerID}> был отклонен **${Tester.user.username}#${Tester.user.discriminator}**.\n**Причина:** ${reason}`);
+        Logs.send(`**${Bot.username}#${Bot.discriminator}**, <@${botDB.dataValues.ownerID}> был отклонен **${Tester.user.username}#${Tester.user.discriminator}**.\n**Причина:** ${reason}`);
         resolve();
     });
 }
@@ -160,7 +160,7 @@ module.exports.autoDelete = (client, botID, reason) => {
         const Bot = await client.users.fetch(botID) || null;
         const botDB = await client.database.Bots.findOne({ where: { botID } }) || null;
         if(!botDB || !botDB.dataValues) resolve();
-        Logs.send(`${client.misc.emojis.trash} ${Bot ? `**${Bot.username}#${Bot.discriminator}**` : `<@${botID}>`}, <@${botDB.dataValues.ownerID}> \n**Причина:** ${reason || "Ее нет"}`);
+                Logs.send(` ${Bot ? `**${Bot.username}#${Bot.discriminator}**` : `<@${botID}>`}, <@${botDB.dataValues.ownerID}> \n**Причина:** ${reason || "Ее нет"}`);
         resolve();
     });
 }

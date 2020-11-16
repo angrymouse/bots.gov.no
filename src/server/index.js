@@ -46,7 +46,10 @@ module.exports = (client) => new Promise((resolve) => {
     app.get("/", async (req, res) => {
         const FetchedBots = await client.database.Bots.findAll({
             where: { isApproved: true },
-            limit : 12
+            limit : 5000,
+            order: [
+                ['totalUpvotes', 'DESC'],
+            ],
         }) || [];
         const Bots = [];
         FetchedBots.map(bot => bot.dataValues).forEach(bot => {
@@ -76,7 +79,7 @@ module.exports.checkAuth = checkAuth;
 async function checkStaff(req, res, next) {
     if(!req.isAuthenticated()) return res.redirect("/login");
     if(req.user.staff) return next();
-    res.redirect("/");
+    res.redirect("https://www.youtube.com/watch?v=xdDhmagsXrc&ab_channel=MORGENSHTERN");
 }
 
 module.exports.checkStaff = checkStaff;

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bot List</title>
+    <title>TopBots</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-duration-format/2.3.2/moment-duration-format.min.js"></script>
     <%- include("./components/header.ejs") %>
@@ -28,7 +28,7 @@
                             <p class="text-muted">Вы можете голосовать за бота каждые 24 часа</p>
                         </div>
                         <div class="col-sm-3">
-                            <span class="badge badge-danger mb-2" style="font-size: 16px;">Готосов: <%= dailyUpvotes %></span><br>
+                            <span class="badge badge-danger mb-2" style="font-size: 16px;">Голосов: <%= dailyUpvotes %></span><br>
                             <span class="badge badge-info mb-2" style="font-size: 16px;">Всего голосов: <%= botDB.totalUpvotes %></span>
                             <a href="/bots/<%= botInfo.id %>" class="badge badge-success" style="font-size: 16px;">Информация о боте</a>
                         </div>

@@ -131,7 +131,13 @@ module.exports = (client) => {
     });
 
     router.get("/", async (req, res) => {
-        const result = await req.bot.database.Bots.findAll({ limit : 12 }) || [];
+        const result = await req.bot.database.Bots.findAll({
+            where: { isApproved: true, },
+            limit : 5000,
+            order: [
+                ['totalUpvotes', 'DESC'],
+            ],
+		 }) || [];
         const Bots = [];
         result.map(bot => bot.dataValues).forEach(bot => {
             const Bot = req.bot.users.cache.get(bot.botID);

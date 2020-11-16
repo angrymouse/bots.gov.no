@@ -15,15 +15,36 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <li class="nav-item">
-                <a href="/bots/add" class="nav-link">Добавить бота</a>
+                <button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModal" style="color:gray; ">
+  Добавить бота
+</button>
+
             </li>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Добавить бота</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Нажимая на кнопку "Добавить" вы соглашаетесь с тем что вы автоматический будете добавленый на сервер поддержки
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+        <button type="button" class="btn btn-primary" onclick="document.location='/bots/add'" >Добавить</button>
+      </div>
+    </div>
+  </div>
+</div>c
             <li class="nav-item dropdown mr-2">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Темы</a>
                 <div class="dropdown-menu">
                     <center class="btn-group-vertical" style="width: calc(100% - 20px); margin: 0 10px;">
-                        <button type="button" onclick="toggleTheme('white')" class="btn btn-primary" style="background-color: white; color: black; border: 1px solid white;">White</button>
-                        <button type="button" onclick="toggleTheme('dark')" class="btn btn-secondary">Dark</button>
-                        <button type="button" onclick="toggleTheme('ocean')" class="btn btn-primary">Ocean</button>
+                        <button type="button" onclick="toggleTheme('white')" class="btn btn-primary" style="background-color: white; color: black; border: 1px solid white;">Стандартная</button>
+                        <button type="button" onclick="toggleTheme('ocean')" class="btn btn-primary">Хэллуин</button>
                     </center>
                 </div>
             </li>
