@@ -40,6 +40,8 @@ module.exports = (client) => new Promise((resolve) => {
     /* Search */
     app.use("/search", require("./routers/Search"));
 
+
+
     /* Other Routes */
     app.get("/ping", (req, res) => res.status(200).send({ ok: true }));
     app.get("/404", (req, res) => (res.render("404.ejs", { bot: req.bot, user: (req.user || null) })));

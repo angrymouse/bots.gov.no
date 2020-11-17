@@ -2,6 +2,8 @@ const { Op } = require("sequelize");
 const _ = require("lodash");
 const router = require("express").Router();
 
+
+
 router.get("/", async (req, res) => {
     const search = req.query.q;
     if(!search) return res.redirect("/bots");
@@ -13,7 +15,7 @@ router.get("/", async (req, res) => {
                 { longDesc: { [Op.like]: `%${search}%` } }
             ]
         },
-        limit : 12
+        limit : 5000
     }) || [];
     const Bots = [];
     result.map(bot => bot.dataValues).forEach(bot => {

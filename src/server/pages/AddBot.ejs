@@ -29,7 +29,7 @@
                 <div class="form-group required">
                     <label for="botShortDesc">Краткое описание</label>
                     <input type="text" class="form-control" id="botShortDesc" aria-describedby="botShortDeschelp" placeholder="Revolutionary bot with..." onkeyup="setValidation($(this), checkValid($(this), 'char_100'))" autocomplete="off">
-                    <small id="botShortDeschelp" class="form-text text-muted">Минимум 50 сим., максимум 100</small>
+                    <small id="botShortDeschelp" class="form-text text-muted">Минимум 20 сим., максимум 40</small>
                 </div>
                 <div class="form-group required">
                     <label for="botLongDesc">Полное описание</label>
@@ -177,7 +177,7 @@ function validateForm() {
     const botShortDesc = $("#botShortDesc");
     if(botShortDesc) {
         const isValid = checkValid(botShortDesc);
-        setValidation(botShortDesc, isValid, "char_100");
+        setValidation(botShortDesc, isValid, "char_50");
         if(!isValid) INVALID_STUFFS += 1;
     }
 
@@ -198,7 +198,7 @@ function validateForm() {
 
 function checkValid(div, key) {
     if(!div.val()) return false;
-    if(key === "char_100" && !(div.val().length >= 50 && div.val().length <= 100)) return false;
+    if(key === "char_100" && !(div.val().length >= 20 && div.val().length <= 40)) return false;
     if(key === "char_300" && div.val().length <= 300) return false;
     return true;
 }
@@ -221,7 +221,7 @@ const longDescPreview = $('#botLongDescPreview');
 
 longDesc.on('change keyup paste', function () {
     const markdownRender = marked(longDesc.val());
-    const allowedTags = sanitizeHtml.defaults.allowedTags.concat(["img", "center"]);
+        const allowedTags = sanitizeHtml.defaults.allowedTags.concat(["img", "center", "style", "iframe"]);
     const sanitizedRender = sanitizeHtml(markdownRender, {
         allowedTags
     });

@@ -82,7 +82,7 @@ $(document).ready(function () {
     const descriptionBox = $("#bot-description");
     const descriptionBoxText = descriptionBox.text() || descriptionBox.val();
     const markdownRender = marked(descriptionBoxText);
-    const allowedTags = sanitizeHtml.defaults.allowedTags.concat(["img", "center"]);
+    const allowedTags = sanitizeHtml.defaults.allowedTags.concat(["img", "center", "style", "iframe"]);
     const sanitizedRender = sanitizeHtml(markdownRender, { allowedTags });
     descriptionBox.html(sanitizedRender);
 });

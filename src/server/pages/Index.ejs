@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TopBots</title>
      <meta name="keywords" content="TopBots, Список Дискорд ботов, Лучшие боты, Боты, боты, Discord Bots List, TB">
-     <meta name="description" content="Список Discord ботов>
+     <meta name="description" content="Список Discord ботов">
      <meta name="yandex-verification" content="860953b3b7436c65" />
     <%- include("./components/header.ejs") %>
 </head>
@@ -50,11 +50,11 @@
                                     <center>
                                         <div class="badges">
                                             <span class="badge badge-success">Онлайн</span>
-                                            <span class="badge badge-primary">Серверов: <%= bots[i][j].guildsCount %></span>
+                                            <span class="badge badge-primary">Серверов: ?</span>
                                             <span class="badge badge-danger">Голосов: <%= bots[i][j].upvotes %></span>
                                         </div>
                                     </center>
-                                    <p class="card-text"><%= bots[i][j].shortDesc.length > 100 ? bots[i][j].shortDesc.substr(0, 97) + "..." : bots[i][j].shortDesc %></p>
+                                    <p class="card-text"><%= bots[i][j].shortDesc.length > 5 ? bots[i][j].shortDesc.substr(0, 97) + "..." : bots[i][j].shortDesc %></p>
                                     <div class="btn-group" id="bot-card-bottons" role="group" aria-label="Basic example" style="width: 100%;">
                                         <a href="/bots/<%= bots[i][j].botID %>" type="button" class="btn btn-primary">Просмотр</a>
                                     </div>
