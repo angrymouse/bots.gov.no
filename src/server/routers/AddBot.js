@@ -37,11 +37,11 @@ module.exports = (client) => {
             return;
         })
         .catch((e) => {
-            if(e === "INVALID_BOT") res.status(400).json({ message: "Invalid Bot ID", code: e });
-            else if(e === "NOT_BOT") res.status(400).json({ message: "ID must be a Bot's ID", code: e });
-            else if(e === "SQLITE_CONSTRAINT") res.status(409).json({ message: "Bot is already submitted", code: e });
-            else if(e === "OWNER_NOT_IN_MAIN") res.status(409).json({ message: "You must join our Discord Server to submit a bot", code: e });
-            else if(e === "BOT_ALREAY_IN_MAIN") res.status(409).json({ message: "Bot is already in the Guild", code: e });
+            if(e === "INVALID_BOT") res.status(400).json({ message: "Не верный ID бота", code: e });
+            else if(e === "NOT_BOT") res.status(400).json({ message: "Это не ID бота", code: e });
+            else if(e === "SQLITE_CONSTRAINT") res.status(409).json({ message: "Ты уже отправил бота", code: e });
+            else if(e === "OWNER_NOT_IN_MAIN") res.status(409).json({ message: "Ты должен зайти на сервер для добавления", code: e });
+            else if(e === "BOT_ALREAY_IN_MAIN") res.status(409).json({ message: "Бот уже есть на мониторинге", code: e });
             else res.status(500).json({ message: "INTERNAL_SERVER_ERROR", code: e });
         });
     });
