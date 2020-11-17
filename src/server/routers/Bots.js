@@ -14,7 +14,7 @@ module.exports = (client) => {
         if(!botDB) return res.redirect("/404");
         const bot = await client.users.fetch(botID).catch(() => {}) || null;
         if(!bot) {
-            await client.queue.autoDelete(client, botID, "Bot doesn't exist");
+            await client.queue.autoDelete(client, botID, "Бота не сущевствует");
             return res.redirect("/404");
         }
         const dailyUpvotes = await client.database.Upvotes.get(`${botID}_upvotes_${new Date().toISOString().slice(0, 10)}`) || 0;
@@ -24,7 +24,7 @@ module.exports = (client) => {
     router.post("/:botID/vote", checkAuth, async (req, res) => {
         const botID = `${req.params.botID}`;
         const botDB = await client.database.Bots.findOne({ where: { botID } });
-        if(!botDB || !botDB.dataValues) return res.json({ ok: false, message: "NO_SUCH_BOT", reason: "No Such Bot was found!" });
+        if(!botDB || !botDB.dataValues) return res.json({ ok: false, message: "NO_SUCH_BOT", reason: "Бот не найден!" });
         const OneHour = 60 * 60 * 1000;
         const TwentyFourHour = 24 * OneHour;
         const ISO = new Date().toISOString().slice(0, 10);
@@ -52,7 +52,7 @@ module.exports = (client) => {
         if(req.user.id !== botDB.dataValues.ownerID) return res.redirect("/404");
         const bot = await client.users.fetch(botID).catch(() => {}) || null;
         if(!bot) {
-            await client.queue.autoDelete(client, botID, "Bot doesn't exist");
+            await client.queue.autoDelete(client, botID, "Бота не сущевствует");
             return res.redirect("/404");
         }
         res.render("EditBot.ejs", { bot: req.bot, botDB, botInfo: bot, user: (req.user || null) });
@@ -68,8 +68,8 @@ module.exports = (client) => {
             return res.status(201).json({ message: "Edited the bot", code: "OK" });
         })
         .catch((e) => {
-            if(e === "INVALID_BOT") res.status(400).json({ message: "Bot ID doesn't exist", code: e });
-            else if(e === "INTERNAL_DB_ERROR") res.status(400).json({ message: "Couldn't save changes", code: e });
+            if(e === "INVALID_BOT") res.status(400).json({ message: "ID бота не сущевствует", code: e });
+            else if(e === "INTERNAL_DB_ERROR") res.status(400).json({ message: "Не удалось сохранить изменения", code: e });
             else res.status(500).json({ message: "INTERNAL_SERVER_ERROR", code: e });
         });
     });
@@ -81,7 +81,7 @@ module.exports = (client) => {
         if(req.user.id === botDB.dataValues.ownerID || req.user.staff) {
             const bot = await client.users.fetch(botID).catch(() => {}) || null;
             if(!bot) {
-                await client.queue.autoDelete(client, botID, "Bot doesn't exist");
+                await client.queue.autoDelete(client, botID, "Бота не сущевствует");
                 return res.redirect("/404");
             }
             res.render("DeleteBot.ejs", { bot: req.bot, botDB, botInfo: bot, user: (req.user || null) });
@@ -115,7 +115,7 @@ module.exports = (client) => {
             botMember = await guild.members.fetch(botID).catch(() => {}) || null;
             owner = await guild.members.fetch(botDB.ownerID).catch(() => {}) || null;
             if(!botMember || !owner) {
-                await client.queue.autoDelete(client, botID, !botMember ? "Bot not in guild" : "Owner not in guild");
+                await client.queue.autoDelete(client, botID, !botMember ? "Бота нет на сервере" : "Владельца нет на сервере");
                 return res.redirect("/404");
             }
         } else {
