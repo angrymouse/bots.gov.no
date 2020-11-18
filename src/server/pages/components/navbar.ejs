@@ -1,4 +1,62 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <style>
+    .navbar-brand {border-radius: 10px;}
+    .navbar-brand {
+        background-color: #00ccff; 
+border: none;
+color: rgb(0, 217, 255);
+padding: 5px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
+cursor: pointer;
+transition: all 500ms ease; 
+    }
+    .navbar-brand:hover {
+background: #ffffff;
+color: #ffffff;
+}
+
+.navbar-brand::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 6px;
+  background-color: #ffffff;
+  border-bottom: 6px solid #00d4fa;
+  transition: 2s;
+}
+.navbar-brand:hover::before {
+  width: 100%;
+}
+.navbar-brand::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 25%;
+  width: 0;
+  height: 6px;
+  background-color: #262626;
+  transition: .5s;
+  transition-delay: .5s;
+}
+.navbar-brand:hover::after {
+  width: 50%;
+}  
+.navbar-brand span {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+  width: 50%;
+  height: 6px;
+  background-color: #fff;
+}
+</style>
     <a class="navbar-brand" href="/"><img src="/assets/logo.png" style="height: 50px; width: 50px;"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -7,16 +65,203 @@
     <div class="collapse navbar-collapse" id="navbarColor02">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
+   <style>
+  .nav-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 6px;
+  background-color: #ffffff;
+  border-bottom: 6px solid #00d4fa;
+  transition: 2s;
+}
+.nav-link:hover::before {
+  width: 100%;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 25%;
+  width: 0;
+  height: 6px;
+  background-color: #262626;
+  transition: .5s;
+  transition-delay: .5s;
+}
+.nav-link:hover::after {
+  width: 50%;
+}  
+.nav-link span {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+  width: 50%;
+  height: 6px;
+  background-color: #fff;
+}
+/* Андерлайн снизу */
+.nav-link {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow: hidden;
+}
+.nav-link:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #2098d1;
+  height: 4px;
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.nav-link:hover:before, .nav-link:focus:before, .nav-link:active:before {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+        .themebutton {border-radius: 12px;}
+        .themebutton {
+            background-color: #00d9ff; 
+    border: none;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 4px;
+    cursor: pointer;
+    transition: all 500ms ease; 
+        }
+        .themebutton:hover {
+background: rgba(255, 255, 255, 0);
+color: #00d9ff;
+box-shadow: inset 0 0 0 3px #ffffff;
+}
+          </style>
+          <button class="themebutton"> <img alt="" src="assets/button.png" width="28" height="28" style="vertical-align:middle" /></button>
           <a class="nav-link" href="/">Главная <span class="sr-only">(current)</span></a>
         </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <li class="nav-item">
-                <button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModal" style="color:gray; ">
-  Добавить бота
-</button>
-
+        <div class="wrapper">
+          <style>
+      /* ПрогрессБар  */
+            .botadd::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 6px;
+            background-color: #ffffff;
+            border-bottom: 6px solid #00d9ff;
+            transition: 2s;
+          }
+          .botadd:hover::before {
+            width: 100%;
+          }
+          .botadd::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 25%;
+            width: 0;
+            height: 6px;
+            background-color: #262626;
+            transition: .5s;
+            transition-delay: .5s;
+          }
+          .botadd:hover::after {
+            width: 50%;
+          }  
+          .botadd span {
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 25%;
+            width: 50%;
+            height: 6px;
+            background-color: #fff;
+          }
+          /* Андерлайн  */
+.botadd {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow: hidden;
+}
+.botadd:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #00d9ff;
+  height: 4px;
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.botadd:hover:before, .botadd:focus:before, .botadd:active:before {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+.botadd {border-radius: 12px;}
+        .botadd {
+            background-color: #00d9ff; 
+    border: none;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 4px;
+    cursor: pointer;
+    transition: all 500ms ease; 
+        }
+        .botadd:hover {
+background: rgba(255, 255, 255, 0);
+color: #00d9ff;
+box-shadow: inset 0 0 0 3px #ffffff;
+}
+                    </style>
+         <button type="button" class="botadd" data-toggle="modal" data-target="#exampleModal" style="background-color: #00d9ff;"> Добавить бота </button>
             </li>
+          </div>
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -31,7 +276,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-        <button type="button" class="btn btn-primary" onclick="document.location='/bots/add'" >Добавить</button>
+        <button  class="btn btn-primary" onclick="document.location='/bots/add'" >Добавить</button>
       </div>
     </div>
   </div>
@@ -41,7 +286,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle btn btn-primary pl-3 pr-3 mr-3" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color: white !important;"><%= user.username %>#<%= user.discriminator %></a>
                         <div class="dropdown-menu">
-                        <a class="dropdown-item" href="/me">Профиль</a>
+                        <a class="dropdown-item" style="background-color: #00ccff;"  href="/me">Профиль</a>
                         <a class="dropdown-item" href="/logout">Выйти</a>
                         <% if (user.staff) { %>
                             <div class="dropdown-divider"></div>
@@ -51,13 +296,53 @@
                 </li>
             <% } else { %>
                 <li class="nav-item">
+                  <style>
+                    .nav-item::before {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 0;
+                    height: 6px;
+                    background-color: #ffffff;
+                    border-bottom: 6px solid #00d4fa;
+                    transition: 2s;
+                  }
+                  .nav-item:hover::before {
+                    width: 100%;
+                  }
+                  .nav-item::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -6px;
+                    left: 25%;
+                    width: 0;
+                    height: 6px;
+                    background-color: #262626;
+                    transition: .5s;
+                    transition-delay: .5s;
+                  }
+                  .nav-item:hover::after {
+                    width: 50%;
+                  }  
+                  .nav-item span {
+                    display: block;
+                    position: absolute;
+                    bottom: 0;
+                    left: 25%;
+                    width: 50%;
+                    height: 6px;
+                    background-color: #fff;
+                  }
+                  
+                            </style>
                     <a href="/login" class="btn btn-primary pl-3 pr-3 mr-3">Войти</a>
                 </li>
             <% } %>
         </ul>
         <div class="form-inline my-2 my-lg-0">
-            <input id="search-box" class="form-control" type="text" placeholder="Каво. (c) Elemelkya 2020" autocomplete="off">
-            <button id="search-btn" class="btn btn-light my-2 my-sm-0" type="button">Поиск</button>
+            <input id="search-box" class="form-control" type="text" style="opacity: .5;" placeholder="Каво. (c) Elemelkya 2020" autocomplete="off">
+            <button id="search-btn" class="btn btn-light my-2 my-sm-0" style="background-color: #00ccff;" type="button">Поиск</button>
         </div>
     </div>
 </nav>
