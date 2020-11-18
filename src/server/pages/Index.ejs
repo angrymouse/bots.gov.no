@@ -58,7 +58,7 @@
                                             <span class="badge badge-danger">Голосов: <%= bots[i][j].upvotes %></span>
                                         </div>
                                     </center>
-                                    <p class="card-text"><%= bots[i][j].shortDesc.length > 5 ? bots[i][j].shortDesc.substr(0, 97) + "..." : bots[i][j].shortDesc %></p>
+                                    <p class="card-text"><%= bots[i][j].shortDesc.length > 20 ? bots[i][j].shortDesc.substr(0, 97) + "..." : bots[i][j].shortDesc %></p>
                                     <div class="button-view" id="bot-card-bottons" role="group" aria-label="Basic example" style="width: 100%;">
                                         <style>
                                             .button-view-reveal {
