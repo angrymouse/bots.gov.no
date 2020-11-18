@@ -158,8 +158,7 @@ color: #00d9ff;
 box-shadow: inset 0 0 0 3px #ffffff;
 }
           </style>
-          <button class="themebutton"> <img alt="" src="assets/button.png" width="28" height="28" style="vertical-align:middle" /></button>
-          <a class="nav-link" href="/">Главная <span class="sr-only">(current)</span></a>
+          <button class="themebutton" > <img alt="" src="assets/button.png" width="28" height="28" style="vertical-align:middle" /></button>
         </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
@@ -256,7 +255,7 @@ box-shadow: inset 0 0 0 3px #ffffff;
         .botadd:hover {
 background: rgba(255, 255, 255, 0);
 color: #00d9ff;
-box-shadow: inset 0 0 0 3px #ffffff;
+box-shadow: inset 0 0 0 3px #00d9ff;
 }
                     </style>
          <button type="button" class="botadd" data-toggle="modal" data-target="#exampleModal" style="background-color: #00d9ff;"> Добавить бота </button>
@@ -266,7 +265,7 @@ box-shadow: inset 0 0 0 3px #ffffff;
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Добавить бота</h5>
+        <h5 class="modal-title" style="color: #ffffff;"  id="exampleModalLabel">Добавить бота</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -290,7 +289,7 @@ box-shadow: inset 0 0 0 3px #ffffff;
                         <a class="dropdown-item" href="/logout">Выйти</a>
                         <% if (user.staff) { %>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="/queue">Очередь</a>
+                            <a class="dropdown-item"  href="/queue">Очередь</a>
                         <% } %>
                     </div>
                 </li>
@@ -336,14 +335,10 @@ box-shadow: inset 0 0 0 3px #ffffff;
                   }
                   
                             </style>
-                    <a href="/login" class="btn btn-primary pl-3 pr-3 mr-3">Войти</a>
+                    <a href="/login" style="background-color: #00ccff; border-radius: 10px;"  class="btn btn-primary pl-3 pr-3 mr-3">Войти</a>
                 </li>
             <% } %>
         </ul>
-        <div class="form-inline my-2 my-lg-0">
-            <input id="search-box" class="form-control" type="text" style="opacity: .5;" placeholder="Каво. (c) Elemelkya 2020" autocomplete="off">
-            <button id="search-btn" class="btn btn-light my-2 my-sm-0" style="background-color: #00ccff;" type="button">Поиск</button>
-        </div>
     </div>
 </nav>
 
