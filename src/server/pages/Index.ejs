@@ -40,7 +40,33 @@
   margin: 0 auto; 
   letter-spacing: .20em; 
   animation: 
-    typing 20s steps(25, end),
+    typing 20s steps(100, end),
+    blink-caret .5s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange }
+}
+
+/* Описание */
+
+.jumbotron p {
+  color: #fff;
+  overflow: hidden; 
+  border-right: .15em solid orange; 
+  white-space: nowrap; 
+  margin: 0 auto; 
+  letter-spacing: .20em; 
+  animation: 
+    typing 20s steps(100, end),
     blink-caret .5s step-end infinite;
 }
 
@@ -58,7 +84,7 @@
         </style>
         <div class="jumbotron" style="background-image: url(/assets/black_background.png);border-radius: 10px;">
             <h2 class="" style="color: azure;text-align: center;"><strong>TopBots</strong></h2>
-            <p style="color: azure;text-align: center;">Лучшие Discord боты в одном месте</p>
+            <p class="descr" style="color: azure;text-align: center;">Лучшие Discord боты в одном месте</p>
             <div style="padding-left: 350px;" class="form-inline my-2 my-lg-0">
                 <input id="search-box" class="form-control" type="text" style="opacity: .5;border-radius: 10px;padding-right: 20%;" placeholder="у меня на локал хосте все нормально.(c) d1m0s23 2020" autocomplete="off">
                 <button id="search-btn" class="btn btn-light my-2 my-sm-0"  style="background-color: #00ccff;border-radius: 10px;color: #ffffff;" type="button">Поиск</button>
