@@ -30,6 +30,32 @@
     <%- include("./components/navbar.ejs", { bot, user }) %>
 
     <div class="container">
+        <style>
+            .jumbotron h2 {
+  color: #fff;
+  font-family: monospace;
+  overflow: hidden; 
+  border-right: .15em solid orange; 
+  white-space: nowrap; 
+  margin: 0 auto; 
+  letter-spacing: .20em; 
+  animation: 
+    typing 20s steps(25, end),
+    blink-caret .5s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange }
+}
+        </style>
         <div class="jumbotron" style="background-image: url(/assets/black_background.png);border-radius: 10px;">
             <h2 class="" style="color: azure;text-align: center;"><strong>TopBots</strong></h2>
             <p style="color: azure;text-align: center;">Лучшие Discord боты в одном месте</p>
