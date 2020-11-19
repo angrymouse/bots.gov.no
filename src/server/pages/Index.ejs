@@ -8,7 +8,7 @@
      <meta name="keywords" content="TopBots, Список Дискорд ботов, Лучшие боты, Боты, боты, Discord Bots List, TB, мониторинг ботов Дискорд, discord bot monitoring ">
      <meta name="description" content="Хочешь найти ботов?Либо раскрутить своего бота?Зайди на top-bots.top .Мы поможем тебе найти лучших ботов для твоего сервера,либо раскрутить своего бота.">
      <meta name="yandex-verification" content="860953b3b7436c65" />
-    <% include("./components/header.ejs") %>
+    <%- include("./components/header.ejs") %>
 </head>
 <body">
 <!-- Yandex.Metrika counter -->
@@ -26,7 +26,7 @@
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/69407656" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
-    <% include("./components/navbar.ejs", { bot, user }) %>
+    <%- include("./components/navbar.ejs", { bot, user }) %>
 
     <div class="container">
         <div class="jumbotron" style="background-image: url(/assets/black_background.png);border-radius: 10px;">
@@ -52,14 +52,13 @@
                                 <% } %>
                                 <div style="border-radius: 10px;" class="card-body">
                                     <h4 class="card-title" style="margin-bottom: 0;border-radius: 0 10px;color: #ffffff;"><strong><%= bots[i][j].tag %></strong></h4>
-                                    <center>
+    
                                         <div class="badges">
                                             <span style="border-radius: 0 10px;" class="badge badge-success">Онлайн</span>
                                             <span style="border-radius: 0 10px;" class="badge badge-primary">Серверов: ?</span>
                                             <span style="border-radius: 0 10px;" class="badge badge-danger">Голосов: <%= bots[i][j].upvotes %></span>
                                         </div>
-                                    </center>
-
+                                    
                                  
 
                                     <p class="card-text" style="color: rgb(255, 255, 255);"><strong><%= bots[i][j].shortDesc.length > 5 ? bots[i][j].shortDesc.substr(0, 97) + "..." : bots[i][j].shortDesc %></strong></p>
