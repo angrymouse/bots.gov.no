@@ -8,6 +8,11 @@
      <meta name="description" content="Хочешь найти ботов?Либо раскрутить своего бота?Зайди на top-bots.top .Мы поможем тебе найти лучших ботов для твоего сервера,либо раскрутить своего бота.">
      <meta name="yandex-verification" content="860953b3b7436c65" />
     <%- include("./components/header.ejs") %>
+    <style>
+        .body{
+            background-image: url(/src/server/assets/black_background.png);;
+        }
+    </style>
 </head>
 <body>
 <!-- Yandex.Metrika counter -->
@@ -95,6 +100,7 @@
   -webkit-transform: translateY(0);
   transform: translateY(0);
 }
+
                                         </style>
                                         <a href="/bots/<%= bots[i][j].botID %>" type="button" class="btn btn-primary">Просмотр</a>
                                     </div>
