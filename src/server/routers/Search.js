@@ -29,5 +29,4 @@ router.get("/", async (req, res) => {
     });
     res.render("Bots.ejs", { bot: req.bot, bots: _.chunk(Bots, 4), user: (req.user || null), search });
 });
-
 module.exports = router;
