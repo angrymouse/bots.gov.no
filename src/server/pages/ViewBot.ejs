@@ -27,17 +27,17 @@
                 <div class="col-sm">
                     <h3><%= botInfo.username %><small class="text-muted">#<%= botInfo.discriminator %></small></h3>
                     <% if (botMember && botMember.presence && botMember.presence.status === "online") { %>
-                        <span class="badge badge-success" style="font-size: 16px;border-radius: 0 20px;">Онлайн</span>
+                        <span class="badge badge-success" style="font-size: 16px;border-radius: 0 20px;padding-right: 15px;padding-left: 15px;">Онлайн</span>
                     <% } else if (botMember && botMember.presence && botInfo.presence.status === "idle") { %>
-                        <span class="badge badge-warning" style="font-size: 16px;border-radius: 0 20px;">Idle</span>
+                        <span class="badge badge-warning" style="font-size: 16px;border-radius: 0 20px;padding-right: 15px;padding-left: 15px;">Idle</span>
                     <% } else if (botMember && botMember.presence && botInfo.presence.status === "dnd") { %>
-                        <span class="badge badge-danger" style="font-size: 16px;border-radius: 0 20px;">DND</span>
+                        <span class="badge badge-danger" style="font-size: 16px;border-radius: 0 20px;padding-right: 15px;padding-left: 15px;">DND</span>
                     <% } else { %>
                         <span class="badge badge-secondary" style="font-size: 16px;border-radius: 0 20px;">Офлайн</span>
                     <% } %>
-                    <span class="badge badge-primary" style="font-size: 16px;border-radius: 0 20px;">Серверов: <%= botDB.guildsCount %></span>
-                    <span class="badge badge-danger" style="font-size: 16px;border-radius: 0 20px;">Голосов: <%= dailyUpvotes %></span>
-                    <span class="badge badge-info" style="font-size: 16px;border-radius: 0 20px;">Всего голосов: <%= botDB.totalUpvotes %></span>
+                    <span class="badge badge-primary" style="font-size: 16px;border-radius: 0 20px;padding-right: 15px;padding-left: 15px;">Серверов: <%= botDB.guildsCount %></span>
+                    <span class="badge badge-danger" style="font-size: 16px;border-radius: 0 20px;padding-right: 15px;padding-left: 15px;">Голосов: <%= dailyUpvotes %></span>
+                    <span class="badge badge-info" style="font-size: 16px;border-radius: 0 20px;padding-right: 15px;padding-left: 15px;">Всего голосов: <%= botDB.totalUpvotes %></span>
                     <hr class="my-4">
                     <% if (botDB.customInvite) { %>
                         <a href="<%= botDB.customInvite %>" type="button" class="btn btn-primary pr-3 pl-3 mr-1">Приглашение</a>
