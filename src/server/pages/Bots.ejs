@@ -45,7 +45,45 @@
                                     </center>
                                     <p class="card-text"><%= bots[i][j].shortDesc.length > 100 ? bots[i][j].shortDesc.substr(0, 97) + "..." : bots[i][j].shortDesc %></p>
                                     <div class="btn-group" id="bot-card-bottons" role="group" aria-label="Basic example" style="width: 100%;">
-                                        <a href="/bots/<%= bots[i][j].botID %>" type="button" class="btn btn-primary">Просмотр</a>
+                                        <style>
+                                            /* Появление границ */
+.viewbutt {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow: hidden;
+}
+.viewbutt:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-color: #2098d1;
+  border-style: solid;
+  border-width: 0;
+  -webkit-transition-property: border-width;
+  transition-property: border-width;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.viewbutt:hover:before, .viewbutt:focus:before, .viewbutt:active:before {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  border-width: 4px;
+}
+                                        </style>
+                                        <a href="/bots/<%= bots[i][j].botID %>" type="button" style="background-color: #0092ac;color: rgb(0, 0, 0);padding-right: 50px;padding-left: 50px;padding-top: 5px;" class="viewbutt">Просмотр</a>
                                     </div>
                                 </div>
                             </div>
