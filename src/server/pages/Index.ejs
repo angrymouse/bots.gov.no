@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TopBots</title>
@@ -9,7 +10,7 @@
      <meta name="yandex-verification" content="860953b3b7436c65" />
     <%- include("./components/header.ejs") %>
 </head>
-<body>
+<body">
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript" >
    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -28,9 +29,9 @@
     <%- include("./components/navbar.ejs", { bot, user }) %>
 
     <div class="container">
-        <div class="jumbotron">
-            <h2>TopBots</h2>
-            <p>Лучшие Discord боты в одном месте</p>
+        <div class="jumbotron" style="background-image: url(/assets/black_background.png);border-radius: 10px;">
+            <h2 class="" style="color: azure;"><strong>TopBots</strong></h2>
+            <p style="color: azure;">Лучшие Discord боты в одном месте</p>
             <div class="form-inline my-2 my-lg-0">
                 <input id="search-box" class="form-control" type="text" style="opacity: .5;border-radius: 10px;" placeholder="Каво. (c) Elemelkya 2020" autocomplete="off">
                 <button id="search-btn" class="btn btn-light my-2 my-sm-0" style="background-color: #00ccff;border-radius: 10px;color: #ffffff;" type="button">Поиск</button>
@@ -38,27 +39,30 @@
         </div>
         <br>
         <div class="randombots">
-            <h4>Боты по рейтингу</h4>
+            <h2 style="color: #ffffff;"><strong>Боты по рейтингу</strong></h2>
             <% for(let i = 0; i < bots.length; i++) { %>
                 <div class="row">
                     <% for(let j = 0; j < bots[i].length; j++) { %>
-                        <div class="col-md-3 mb-3 bot-card-col">
-                            <div class="card">
+                        <div  class="col-md-3 mb-3 bot-card-col">
+                            <div style="background: #999999;border-radius: 0 20px;" class="card">
                                 <% if (bots[i][j].avatar) { %>
-                                    <img class="card-img-top" src="https://cdn.discordapp.com/avatars/<%= bots[i][j].botID %>/<%= bots[i][j].avatar %>.png?size=1280" alt="<%= bots[i][j].tag %>">
+                                    <img style="border-radius: 0 20px;" class="card-img-top" src="https://cdn.discordapp.com/avatars/<%= bots[i][j].botID %>/<%= bots[i][j].avatar %>.png?size=1280" alt="<%= bots[i][j].tag %>">
                                 <% } else { %>
-                                    <img class="card-img-top" src="https://cdn.discordapp.com/embed/avatars/<%= (bots[i][j].botID % 5) %>.png" alt="<%= bots[i][j].tag %>">
+                                    <img style="border-radius: 0 20px;" class="card-img-top" src="https://cdn.discordapp.com/embed/avatars/<%= (bots[i][j].botID % 5) %>.png" alt="<%= bots[i][j].tag %>">
                                 <% } %>
-                                <div class="card-body">
-                                    <h4 class="card-title" style="margin-bottom: 0;"><%= bots[i][j].tag %></h4>
+                                <div style="border-radius: 10px;" class="card-body">
+                                    <h4 class="card-title" style="margin-bottom: 0;border-radius: 0 10px;color: #ffffff;"><strong><%= bots[i][j].tag %></strong></h4>
                                     <center>
                                         <div class="badges">
-                                            <span class="badge badge-success">Онлайн</span>
-                                            <span class="badge badge-primary">Серверов: ?</span>
-                                            <span class="badge badge-danger">Голосов: <%= bots[i][j].upvotes %></span>
+                                            <span style="border-radius: 0 10px;" class="badge badge-success">Онлайн</span>
+                                            <span style="border-radius: 0 10px;" class="badge badge-primary">Серверов: ?</span>
+                                            <span style="border-radius: 0 10px;" class="badge badge-danger">Голосов: <%= bots[i][j].upvotes %></span>
                                         </div>
                                     </center>
+
                                     <p class="card-text"><%= bots[i][j].shortDesc.length > 20 ? bots[i][j].shortDesc.substr(0, 97) + "..." : bots[i][j].shortDesc %></p>
+
+                                    <p class="card-text" style="color: rgb(255, 255, 255);"><strong><%= bots[i][j].shortDesc.length > 5 ? bots[i][j].shortDesc.substr(0, 97) + "..." : bots[i][j].shortDesc %></strong></p>
                                     <div class="button-view" id="bot-card-bottons" role="group" aria-label="Basic example" style="width: 100%;">
                                         <style>
                                             .button-view-reveal {
@@ -95,8 +99,9 @@
   -webkit-transform: translateY(0);
   transform: translateY(0);
 }
+
                                         </style>
-                                        <a href="/bots/<%= bots[i][j].botID %>" type="button" class="btn btn-primary">Просмотр</a>
+                                        <a href="/bots/<%= bots[i][j].botID %>" style="border-radius: 15px;" type="button" class="btn btn-primary">Просмотр</a>
                                     </div>
                                 </div>
                             </div>
@@ -106,6 +111,7 @@
             <% } %>
         </div>
     </div>
+    <%- include("./components/footer.ejs") %> 
 </body>
 
 <style>
