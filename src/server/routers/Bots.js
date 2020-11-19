@@ -142,7 +142,7 @@ module.exports = (client) => {
         result.map(bot => bot.dataValues).forEach(bot => {
             const Bot = req.bot.users.cache.get(bot.botID);
             if(Bot) {
-                bot.tag = `${Bot.username}#${Bot.discriminator}`;
+                bot.tag = `${Bot.username}`;
                 bot.avatar = Bot.avatar;
                 bot.upvotes = req.bot.database.Upvotes.get(`${bot.botID}_upvotes_${new Date().toISOString().slice(0, 10)}`) || 0;
                 Bots.push(bot);
