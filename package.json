@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.2",
-    "better-sqlite3": "^7.1.0",
+    "better-sqlite3": "^7.1.1",
     "body-parser": "^1.19.0",
     "chalk": "^4.1.0",
     "connect-sqlite3": "^0.9.11",
@@ -25,7 +25,7 @@
     "memorystore": "^1.6.2",
     "passport": "^0.4.1",
     "passport-discord": "^0.1.4",
-    "sequelize": "^5.21.12",
+    "sequelize": "^5.22.3",
     "socket.io": "^2.3.0",
     "sqlite3": "^4.2.0",
     "yaml": "^1.10.0"
