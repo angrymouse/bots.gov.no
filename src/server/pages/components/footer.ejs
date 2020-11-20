@@ -1,18 +1,13 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Goldman&display=swap');
     .footer{
-        background-color: #000000;
+        background-image: url(/assets/404.gif);
         width: 1450px;
         height: 400px;
     }
 .logo{
-    padding-left: 650px;
+    text-align: center;
 }
-.logo-text{
-    padding-left: 650px;
-
-}
-/* Андерлайн слева */
 .logo-text {
   display: inline-block;
   vertical-align: middle;
@@ -29,28 +24,66 @@
   content: "";
   position: absolute;
   z-index: -1;
-  left: 0;
+  left: 650px;
   right: 100%;
   bottom: 0;
-  background: #2098d1;
+  background: aqua;
   height: 4px;
   -webkit-transition-property: right;
   transition-property: right;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
   -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
 .logo-text:hover:before, .logo-text:focus:before, .logo-text:active:before {
   right: 0;
 }
-
+.developers {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow: hidden;
+}
+.developers:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  background: aqua;
+  height: 4px;
+  -webkit-transition-property: left, right;
+  transition-property: left, right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.developers:hover:before, .developers:focus:before, .developers:active:before {
+  left: 0;
+  right: 0;
+}
+.copyright{
+    padding-left: 510px;
+}
 </style>
 <footer class="footer" >
     <div class="logo">
-        <a class="navbar-brand" href="/"><img src="/assets/logo.png" style="height: 100px;width: 100px;"></a>
+        <a class="navbar-brand" href=""><img src="/assets/logo.png" style="height: 100px;width: 100px;"></a>
     </div>
-    <div>
-    <h2 class="logo-text">TopBots</h2>
+    <div class="logo-text">
+         <h2 style="padding-left: 640px;" >TopBots</h2>
+    </div>
+    <div class="copyright">
+        <h5 class="developers" >Frotend <strong style="color: aqua;">d1m0s23</strong></h5>
+        <h5 class="developers" style="padding-left: 25px;">Backend <strong style="color: aqua;">eLemeLkyaa</strong></h5>
     </div>
 </footer>
