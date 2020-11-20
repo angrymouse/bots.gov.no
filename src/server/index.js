@@ -40,7 +40,6 @@ module.exports = (client) => new Promise((resolve) => {
     /* Search */
     app.use("/search", require("./routers/Search"));
 
-    var sitemap = require('express-sitemap')();
 
     /* Other Routes */
     app.get("/ping", (req, res) => res.status(200).send({ ok: true }));
@@ -65,26 +64,9 @@ module.exports = (client) => new Promise((resolve) => {
         });
         res.render("Index.ejs", { bot: req.bot, user: (req.user || null), bots: _.chunk(Bots, 4) });
     });
-    sitemap.generate(app);
     
         
-sitemap({
-    map: {
-        '/': ['get'],
-    },
-    route: {
-        '/': {
-            lastmod: '2020-11-20',
-            changefreq: 'always',
-            priority: 1.0,
-        },
-    },
-}).XMLtoFile();
 
-    server.listen(client.config.port);
-    resolve();
-
-});
 
 function checkAuth(req, res, next) {
     if (req.isAuthenticated()) return next();
