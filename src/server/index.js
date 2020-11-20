@@ -41,6 +41,7 @@ module.exports = (client) => new Promise((resolve) => {
     app.use("/search", require("./routers/Search"));
 
 
+
     /* Other Routes */
     app.get("/ping", (req, res) => res.status(200).send({ ok: true }));
     app.get("/404", (req, res) => (res.render("404.ejs", { bot: req.bot, user: (req.user || null) })));
@@ -56,7 +57,7 @@ module.exports = (client) => new Promise((resolve) => {
         FetchedBots.map(bot => bot.dataValues).forEach(bot => {
             const Bot = client.users.cache.get(bot.botID);
             if(Bot) {
-                bot.tag = `${Bot.username}`;
+                bot.tag = `${Bot.username}#${Bot.discriminator}`;
                 bot.avatar = Bot.avatar;
                 bot.upvotes = client.database.Upvotes.get(`${bot.botID}_upvotes_${new Date().toISOString().slice(0, 10)}`) || 0;
                 Bots.push(bot);
@@ -65,6 +66,10 @@ module.exports = (client) => new Promise((resolve) => {
         res.render("Index.ejs", { bot: req.bot, user: (req.user || null), bots: _.chunk(Bots, 4) });
     });
 
+    server.listen(client.config.port);
+    resolve();
+
+});
 
 function checkAuth(req, res, next) {
     if (req.isAuthenticated()) return next();
