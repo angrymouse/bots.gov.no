@@ -51,7 +51,7 @@ module.exports = class Xeno extends Client {
             this.database.Bots.sync({ force: false }).then(() => this.logger.log(`Loaded Bots (Database)`));
 
             /* Server */
-            require("./server")(this).then(() => this.logger.log(`Listening on PORT ${this.config.port} (Server)`));
+            require('./server')(this).then(() => this.logger.log(`Listening on PORT ${this.config.port} (Server)`));
 
             return resolve();
         });

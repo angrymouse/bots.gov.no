@@ -20,6 +20,7 @@
     "enmap": "^5.8.2",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
+    "express-sitemap": "^1.8.0",
     "helmet": "^3.22.1",
     "lodash": "^4.17.15",
     "memorystore": "^1.6.2",
