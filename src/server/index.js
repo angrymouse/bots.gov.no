@@ -40,7 +40,15 @@ module.exports = (client) => new Promise((resolve) => {
     /* Search */
     app.use("/search", require("./routers/Search"));
 
-
+app.get('/sitemap.xml', function(req, res) {
+  sitemapData.toXML( function (err, xml) {
+      if (err) {
+        return res.status(500).end();
+      }
+      res.header('Content-Type', 'application/xml');
+      res.send( xml );
+  });
+});
 
     /* Other Routes */
     app.get("/ping", (req, res) => res.status(200).send({ ok: true }));
