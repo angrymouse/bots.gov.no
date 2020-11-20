@@ -40,7 +40,7 @@ module.exports = (client) => new Promise((resolve) => {
     /* Search */
     app.use("/search", require("./routers/Search"));
 
-    
+
     /* Other Routes */
     app.get("/ping", (req, res) => res.status(200).send({ ok: true }));
     app.get("/404", (req, res) => (res.render("404.ejs", { bot: req.bot, user: (req.user || null) })));
@@ -63,6 +63,9 @@ module.exports = (client) => new Promise((resolve) => {
             }
         });
         res.render("Index.ejs", { bot: req.bot, user: (req.user || null), bots: _.chunk(Bots, 4) });
+    });
+
+
 function checkAuth(req, res, next) {
     if (req.isAuthenticated()) return next();
     res.redirect("/login");
