@@ -3,7 +3,6 @@ const _ = require("lodash");
 const router = require("express").Router();
 
 
-
 router.get("/", async (req, res) => {
     const search = req.query.q;
     if(!search) return res.redirect("/bots");
