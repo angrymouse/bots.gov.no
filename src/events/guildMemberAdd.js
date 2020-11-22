@@ -23,7 +23,7 @@ async function QueueBotApprove(client, member) {
     if(!Owner) {
         await client.database.Bots.destroy({ where: { botID: member.user.id } });
         if(client.queueIO) client.queueIO.emit("queueServerRequest");
-        if(Logs) Logs.send(`${client.misc.emojis.trash} **${member.user.username}#${member.user.discriminator}**  <@${botDB.dataValues.ownerID}> был удален из очереди.\n**Причина:** Владелец ушел с сервера.`);
+        if(Logs) Logs.send(`*${member.user.username}#${member.user.discriminator}**  <@${botDB.dataValues.ownerID}> был удален из очереди.\n**Причина:** Владелец ушел с сервера.`);
         return;
     }
 
@@ -46,8 +46,8 @@ async function QueueBotApprove(client, member) {
         member.roles.add(client.config.roles.bots).catch(() => {});
         if(client.queueIO) client.queueIO.emit("queueServerRequest");
         if(Logs) {
-            if(Tester) Logs.send(`${client.misc.emojis.tick} **${member.user.username}#${member.user.discriminator}** by <@${queueDB.dataValues.ownerID}> был подтвержден **${Tester.user.username}#${Tester.user.discriminator}**.`);
-            else Logs.send(`${client.misc.emojis.tick} **${member.user.username}#${member.user.discriminator}** <@${queueDB.dataValues.ownerID}> был подтвержден.`);
+            if(Tester) Logs.send(`**${member.user.username}#${member.user.discriminator}** by <@${queueDB.dataValues.ownerID}> был подтвержден **${Tester.user.username}#${Tester.user.discriminator}**.`);
+            else Logs.send(`**${member.user.username}#${member.user.discriminator}** <@${queueDB.dataValues.ownerID}> был подтвержден.`);
         }
     })
     .catch(() => {});
