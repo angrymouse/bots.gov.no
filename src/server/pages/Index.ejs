@@ -135,9 +135,9 @@ transform: translateY(0);
         <div class="jumbotron" style="background-image: url(/assets/black_background.png);border-radius: 10px;">
             <h2 class="" style="color: azure;text-align: center;"><strong>TopBots</strong></h2>
             <p class="descr" style="color: azure;text-align: center;">Лучшие Discord боты в одном месте</p>
-            <div style="padding-left: 350px;" class="form-inline my-2 my-lg-0">
-                <input id="search-box" class="form-control" type="text" style="opacity: .5;border-radius: 10px;padding-right: 20%;text-align: center;" placeholder="у меня на локал хосте все нормально.(c) d1m0s23 2020" autocomplete="off">
-                <button id="search-btn" class="btn btn-light my-2 my-sm-0"  style="background-color: #00ccff;border-radius: 10px;color: #ffffff;" type="button">Поиск</button>
+            <div style="text-align: center;padding-left: 35%;" class="form-inline my-2 my-lg-0">
+                <input id="search-box" class="form-control" type="text" style="opacity: .5;border-radius: 10px;padding-left: 10%;padding-right: 10%;" placeholder="у меня на локал хосте все нормально.(c) d1m0s23 2020" autocomplete="off">
+                <button id="search-btn" class="btn btn-light my-2 my-sm-0"  style="background-color: #00ccff;border-radius: 10px;color: #ffffff;text-align: right;" type="button">Поиск</button>
             </div>
         </div>
         <br>
@@ -166,8 +166,7 @@ transform: translateY(0);
 
                                     <p class="card-text" style="color: rgb(255, 255, 255);"><strong><%= bots[i][j].shortDesc.length > 5 ? bots[i][j].shortDesc.substr(0, 97) + "..." : bots[i][j].shortDesc %></strong></p>
                                     <div class="button-view" id="bot-card-bottons" role="group" aria-label="Basic example" style="width: 100%;">
-                                        
-                                        <a href="/bots/<%= bots[i][j].botID %>" style="border-radius: 15px;background-color: #7289DA;" type="button" class="btn btn-primary">Просмотр</a>
+                                         <a href="/bots/<%= bots[i][j].botID %>" style="border-radius: 15px;" type="button" class="btn btn-primary">Просмотр</a>  
                                     </div>
                                 </div>
                             </div>
