@@ -14,11 +14,10 @@
   gtag('config', 'G-XC59BH0KTK');
 </script>
     <style>
-        .jumbotron h2 {
+        .jumbotron h1 {
 color: #fff;
-font-family: monospace;
 overflow: hidden; 
-border-right: .15em solid orange; 
+border-right: .15em solid #ffffff; 
 white-space: nowrap; 
 margin: 0 auto; 
 letter-spacing: .20em; 
@@ -36,7 +35,7 @@ to { width: 100% }
 /* The typewriter cursor effect */
 @keyframes blink-caret {
 from, to { border-color: transparent }
-50% { border-color: orange }
+50% { border-color:  #4a5da1 }
 }
 
 /* Описание */
@@ -44,7 +43,7 @@ from, to { border-color: transparent }
 .jumbotron p {
 color: #fff;
 overflow: hidden; 
-border-right: .15em solid orange; 
+border-right: .15em solid rgb(255, 255, 255); 
 white-space: nowrap; 
 margin: 0 auto; 
 letter-spacing: .20em; 
@@ -62,7 +61,7 @@ to { width: 100% }
 /* The typewriter cursor effect */
 @keyframes blink-caret {
 from, to { border-color: transparent }
-50% { border-color: orange }
+50% { border-color: #4a5da1 }
 }
     </style>
     <style>
@@ -130,53 +129,146 @@ transform: translateY(0);
 <!-- /Yandex.Metrika counter -->
     <%- include("./components/navbar.ejs", { bot, user }) %>
 
-    <div class="container">
-    
-        <div class="jumbotron" style="background-image: url(/assets/black_background.png);border-radius: 10px;">
-            <h2 class="" style="color: azure;text-align: center;"><strong>TopBots</strong></h2>
-            <p class="descr" style="color: azure;text-align: center;">Лучшие Discord боты в одном месте</p>
-            <div style="text-align: center;padding-left: 35%;" class="form-inline my-2 my-lg-0">
-                <input id="search-box" class="form-control" type="text" style="opacity: .5;border-radius: 10px;padding-left: 10%;padding-right: 10%;" placeholder="у меня на локал хосте все нормально.(c) d1m0s23 2020" autocomplete="off">
-                <button id="search-btn" class="btn btn-light my-2 my-sm-0"  style="background-color: #00ccff;border-radius: 10px;color: #ffffff;text-align: right;" type="button">Поиск</button>
-            </div>
-        </div>
-        <br>
-        <div class="randombots">
-            <h2 style="color: #ffffff;"><strong>Боты по рейтингу</strong></h2>
-            <% for(let i = 0; i < bots.length; i++) { %>
-                <div class="row">
-                    <% for(let j = 0; j < bots[i].length; j++) { %>
-                        <div  class="col-md-3 mb-3 bot-card-col">
-                            <div style="background: #5a5a5a;border-radius: 0 20px;" class="card">
-                                <% if (bots[i][j].avatar) { %>
-                                    <img style="border-radius: 0 20px;" class="card-img-top" src="https://cdn.discordapp.com/avatars/<%= bots[i][j].botID %>/<%= bots[i][j].avatar %>.png?size=1280" alt="<%= bots[i][j].tag %>">
-                                <% } else { %>
-                                    <img style="border-radius: 0 20px;" class="card-img-top" src="https://cdn.discordapp.com/embed/avatars/<%= (bots[i][j].botID % 5) %>.png" alt="<%= bots[i][j].tag %>">
-                                <% } %>
-                                <div style="border-radius: 10px;" class="card-body">
-                                    <h4 class="card-title" style="margin-bottom: 0;border-radius: 0 10px;color: #ffffff;"><strong><%= bots[i][j].tag %></strong></h4>
-    
-                                        <div class="badges">
-                                            <span style="border-radius: 0 10px;padding-right: 15px;padding-left: 15px;" class="badge badge-success">Онлайн</span>
-                                            <span style="border-radius: 0 10px;padding-right: 15px;padding-left: 15px;" class="badge badge-primary">Серверов: ?</span>
-                                            <span style="border-radius: 0 10px;padding-right: 15px;padding-left: 15px;" class="badge badge-danger">Голосов: <%= bots[i][j].upvotes %></span>
-                                        </div>
-                                    
-                                 
+        <style>
+            ::selection {
+background-color: rgb(0, 183, 255);
+color: white;
+}
 
-                                    <p class="card-text" style="color: rgb(255, 255, 255);"><strong><%= bots[i][j].shortDesc.length > 5 ? bots[i][j].shortDesc.substr(0, 97) + "..." : bots[i][j].shortDesc %></strong></p>
-                                    <div class="button-view" id="bot-card-bottons" role="group" aria-label="Basic example" style="width: 100%;">
-                                         <a href="/bots/<%= bots[i][j].botID %>" style="border-radius: 15px;" type="button" class="btn btn-primary">Просмотр</a>  
+.parallax > use {
+animation: move-forever 12s linear infinite;
+}
+.parallax > use:nth-child(1) {
+animation-delay: -2s;
+}
+.parallax > use:nth-child(2) {
+animation-delay: -2s;
+animation-duration: 5s;
+}
+.parallax > use:nth-child(3) {
+animation-delay: -4s;
+animation-duration: 3s;
+}
+
+@keyframes move-forever {
+0% {
+transform: translate(-90px, 0%);
+}
+100% {
+transform: translate(85px, 0%);
+}
+}
+.editorial {
+display: block;
+width: 100%;
+height: 10em;
+max-height: 100vh;
+margin: 0;
+}
+
+
+.content {
+font-family: 'Lato',sans-serif;
+text-align: center;
+background-color: #2C2F33;
+text-align: center;
+min-height: 75vh;
+margin: -.1em 0 0 0;
+padding: 1em;
+color: #eee;
+font-size: 2em;
+font-weight: 300;
+}
+
+.content {
+font-size: 1em;
+}
+
+.content h1 {
+margin-top: -1.3em;
+font-weight: 100;
+font-size: 5em;
+user-select: none;
+cursor: default;
+}
+        </style>
+            <div class="jumbotron" style="background-color: #23272A;border-radius: 10px;">
+            
+                <h1 class="" style="color: azure;text-align: center;"><strong>TopBots</strong></h1>
+                <p class="descr" style="color: azure;text-align: center;">Лучшие Discord боты в одном месте</p>
+                <div style="text-align: center;padding-left: 33%;" class="form-inline my-2 my-lg-0">
+                    <input id="search-box" class="form-control" type="text" style="opacity: .5;border-radius: 10px;padding-left: 7%;padding-right: 15%;" placeholder="на свой трах и риск(c) d1m0s23 2020" autocomplete="off">
+                    <button id="search-btn" class="btn btn-light my-2 my-sm-0"  style="background-color: #ffffff;border-radius: 10px;color: black;text-align: right;" type="button">Поиск</button>
+                </div>
+            </div>
+ <svg style="height: 100%;" class="editorial"
+ xmlns="http://www.w3.org/2000/svg"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ viewBox="0 24 150 28"
+ preserveAspectRatio="none">
+<defs>
+<path id="gentle-wave"
+d="M-160 44c30 0 
+58-18 88-18s
+58 18 88 18 
+58-18 88-18 
+58 18 88 18
+v44h-352z" />
+</defs>
+<g class="parallax">
+<use  xlink:href="#gentle-wave" x="100" y="0" fill="#4a5da1"/>
+<use xlink:href="#gentle-wave" x="100" y="3" fill="#23272A"/>
+<use xlink:href="#gentle-wave" x="100" y="6" fill="#2C2F33"/>  
+</g>
+</svg>
+<div class="content">
+    <div class="randombots">
+        <h3 style="color: #ffffff;"><strong>Боты по рейтингу</strong></h3>
+        <% for(let i = 0; i < bots.length; i++) { %>
+            <div class="row">
+                <% for(let j = 0; j < bots[i].length; j++) { %>
+                    <style>
+                        .bot-card-col{
+                         transition: all 0.5s ease-out;
+                         }
+                         .bot-card-col:hover{
+                          transform: scale(1.1);
+                         }
+                    </style>
+                    <div  class="col-md-3 mb-3 bot-card-col">
+                        <div style="background: #23272A;border-radius: 0 20px;" class="card">
+                            <% if (bots[i][j].avatar) { %>
+                                <img style="border-radius: 0 20px;" class="card-img-top" src="https://cdn.discordapp.com/avatars/<%= bots[i][j].botID %>/<%= bots[i][j].avatar %>.png?size=1280" alt="<%= bots[i][j].tag %>">
+                            <% } else { %>
+                                <img style="border-radius: 0 20px;" class="card-img-top" src="https://cdn.discordapp.com/embed/avatars/<%= (bots[i][j].botID % 5) %>.png" alt="<%= bots[i][j].tag %>">
+                            <% } %>
+                            <div style="border-radius: 10px;" class="card-body">
+                                <h4 class="card-title" style="margin-bottom: 0;border-radius: 0 10px;color: #ffffff;"><strong><%= bots[i][j].tag %></strong></h4>
+
+                                    <div class="badges">
+                                        <span style="border-radius: 0 10px;padding-right: 15px;padding-left: 15px;" class="badge badge-success">Онлайн</span>
+                                        <span style="border-radius: 0 10px;padding-right: 15px;padding-left: 15px;" class="badge badge-primary">Серверов: ?</span>
+                                        <span style="border-radius: 0 10px;padding-right: 15px;padding-left: 15px;" class="badge badge-danger">Голосов: <%= bots[i][j].upvotes %></span>
                                     </div>
+                                
+                             
+
+                                <p class="card-text" style="color: rgb(255, 255, 255);"><strong><%= bots[i][j].shortDesc.length > 5 ? bots[i][j].shortDesc.substr(0, 97) + "..." : bots[i][j].shortDesc %></strong></p>
+                                <div class="button-view" id="bot-card-bottons" role="group" aria-label="Basic example" style="width: 100%;">
+                                     <a href="/bots/<%= bots[i][j].botID %>" style="border-radius: 15px;background-color: #ffffff;color: black;" type="button" class="btn btn-primary">Просмотр</a>  
                                 </div>
                             </div>
                         </div>
-                    <% } %>
-                </div>
-            <% } %>
-        </div>
+                    </div>
+                <% } %>
+            </div>
+        <% } %>
     </div>
+
+        <br>
+        <hr>
     <%- include("./components/footer.ejs") %> 
+</div> 
 </body>
 
 <style>
