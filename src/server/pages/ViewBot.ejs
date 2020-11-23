@@ -23,11 +23,11 @@
     </script>
     <%- include("./components/header.ejs") %>
 </head>
-<body style="background-color: #2d55aa;position: static;">
+<body style="background-color:  #23272A;position: static;">
     <%- include("./components/navbar.ejs", { bot, user }) %>
 
-    <div style="background-color: #2d55aa;" class="container">
-        <div style="background-color: #7289DA;border-radius: 30px;" class="jumbotron mt-5">
+    <div style="background-color: #23272A;" class="container">
+        <div style="background-color: #2C2F33;border-radius: 30px;" class="jumbotron mt-5">
             <div class="row" style="width: 100%;">
                 <div class="col-sm-2">
                     <% if (botInfo.avatar) { %>
@@ -81,7 +81,6 @@
                 </p>
             <% } %>
         </div>
-        <div style="background-color: #7289DA;border-radius: 10px;" class="card bg-light mb-3">
             <div class="card-body">
                 <div id="bot-description"><%= botDB.longDesc %></div>
             </div>

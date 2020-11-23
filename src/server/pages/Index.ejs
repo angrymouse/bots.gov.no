@@ -170,7 +170,7 @@ margin: 0;
 .content {
 font-family: 'Lato',sans-serif;
 text-align: center;
-background-color: #2d55aa;
+background-color: #2C2F33;
 text-align: center;
 min-height: 75vh;
 margin: -.1em 0 0 0;
@@ -192,13 +192,13 @@ user-select: none;
 cursor: default;
 }
         </style>
-            <div class="jumbotron" style="background-color: #7289DA;border-radius: 10px;">
+            <div class="jumbotron" style="background-color: #23272A;border-radius: 10px;">
             
                 <h2 class="" style="color: azure;text-align: center;"><strong>TopBots</strong></h2>
                 <p class="descr" style="color: azure;text-align: center;">Лучшие Discord боты в одном месте</p>
                 <div style="text-align: center;padding-left: 35%;" class="form-inline my-2 my-lg-0">
                     <input id="search-box" class="form-control" type="text" style="opacity: .5;border-radius: 10px;padding-left: 10%;padding-right: 10%;" placeholder="на свой трах и риск(c) d1m0s23 2020" autocomplete="off">
-                    <button id="search-btn" class="btn btn-light my-2 my-sm-0"  style="background-color: #ffffff;border-radius: 10px;color: black;text-align: right;" type="button">Поиск</button>
+                    <button id="search-btn" class="btn btn-light my-2 my-sm-0"  style="background-color: #00ccff;border-radius: 10px;color: #ffffff;text-align: right;" type="button">Поиск</button>
                 </div>
             </div>
  <svg style="height: 100%;" class="editorial"
@@ -216,9 +216,9 @@ d="M-160 44c30 0
 v44h-352z" />
 </defs>
 <g class="parallax">
-<use xlink:href="#gentle-wave" x="100" y="0" fill="#4579e2"/>
-<use xlink:href="#gentle-wave" x="100" y="3" fill="#3461c1"/>
-<use xlink:href="#gentle-wave" x="100" y="6" fill="#2d55aa"/>  
+<use  xlink:href="#gentle-wave" x="100" y="0" fill="#FFFFFF"/>
+<use xlink:href="#gentle-wave" x="100" y="3" fill="#99AAB5"/>
+<use xlink:href="#gentle-wave" x="100" y="6" fill="#2C2F33"/>  
 </g>
 </svg>
 <div class="content">
@@ -236,7 +236,7 @@ v44h-352z" />
                          }
                     </style>
                     <div  class="col-md-3 mb-3 bot-card-col">
-                        <div style="background: #1b7dbe;border-radius: 0 20px;" class="card">
+                        <div style="background: #23272A;border-radius: 0 20px;" class="card">
                             <% if (bots[i][j].avatar) { %>
                                 <img style="border-radius: 0 20px;" class="card-img-top" src="https://cdn.discordapp.com/avatars/<%= bots[i][j].botID %>/<%= bots[i][j].avatar %>.png?size=1280" alt="<%= bots[i][j].tag %>">
                             <% } else { %>
@@ -255,7 +255,7 @@ v44h-352z" />
 
                                 <p class="card-text" style="color: rgb(255, 255, 255);"><strong><%= bots[i][j].shortDesc.length > 5 ? bots[i][j].shortDesc.substr(0, 97) + "..." : bots[i][j].shortDesc %></strong></p>
                                 <div class="button-view" id="bot-card-bottons" role="group" aria-label="Basic example" style="width: 100%;">
-                                     <a href="/bots/<%= bots[i][j].botID %>" style="border-radius: 15px;" type="button" class="btn btn-primary">Просмотр</a>  
+                                     <a href="/bots/<%= bots[i][j].botID %>" style="border-radius: 15px;background-color: #ffffff;color: black;" type="button" class="btn btn-primary">Просмотр</a>  
                                 </div>
                             </div>
                         </div>
