@@ -91,7 +91,11 @@ v44h-352z" />
             <div class="row">
                 <% for(let j = 0; j < bots[i].length; j++) { %>
                     <div  class="col-md-3 mb-3 bot-card-col">
+                    <% if(bots[i][j].botID == '756878980123983995') { %>
+                    <div style="background: #7289da;border-radius: 0 20px;" class="card">
+                    <% } else { %>
                         <div style="background: #23272A;border-radius: 0 20px;" class="card">
+                        <% } %>
                             <% if (bots[i][j].avatar) { %>
                                 <img style="border-radius: 0 20px;" class="card-img-top" src="https://cdn.discordapp.com/avatars/<%= bots[i][j].botID %>/<%= bots[i][j].avatar %>.png?size=1280" alt="<%= bots[i][j].tag %>">
                             <% } else { %>
