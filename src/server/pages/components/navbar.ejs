@@ -15,7 +15,12 @@
             <li class="nav-item">
             <div class="button-add">
             <button type="button" class="botadd" data-toggle="modal" data-target="#exampleModal" style="background-color: #4a5da1;color: #FFFFFF;"> Добавить бота </button>
-            </li>
+            <% if (user) { %>
+              <% if (user.staff) { %>
+            <button type="button" class="botadd" data-toggle="modal" onclick="document.location='/queue'" style="background-color: #66778a;color: #FFFFFF;"> Очередь ботов </button>
+                <% } %>
+              <% } %>                    
+              </li>
           </div>
         </div>
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
