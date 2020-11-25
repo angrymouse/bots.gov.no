@@ -102,9 +102,9 @@ v44h-352z" />
 
                                     <div class="badges">
                                         <span style="border-radius: 0 10px;padding-right: 15px;padding-left: 15px;" class="badge badge-success">Онлайн</span>
-                                    <% if(bots[i][j].botID == '756878980123983995') { %>
+                                <% if(bots[i][j].botID == '756878980123983995') { %>
                                 <span style="border-radius: 0 10px;padding-right: 15px;padding-left: 15px;" class="badge badge-danger">БУСТ</span> 
-                                <span style="border-radius: 0 10px;padding-right: 15px;padding-left: 15px;" class="badge badge-primary"> ∞</span>
+                                <span style="border-radius: 0 10px;padding-right: 15px;padding-left: 15px;" class="badge badge-primary">∞</span>
                                 <% } else { %>
                                         <span style="border-radius: 0 10px;padding-right: 15px;padding-left: 15px;" class="badge badge-primary">Серверов: ?</span>
                                         <span style="border-radius: 0 10px;padding-right: 15px;padding-left: 15px;" class="badge badge-danger">Голосов: <%= bots[i][j].upvotes %></span>
@@ -113,7 +113,7 @@ v44h-352z" />
                         
                              
 
-                                <p class="card-text" style="color: rgb(255, 255, 255);"><strong><%= bots[i][j].shortDesc.length > 5 ? bots[i][j].shortDesc.substr(0, 97) + "..." : bots[i][j].shortDesc %></strong></p>
+                                <p class="card-text" style="color: rgb(255, 255, 255);"><strong><%= bots[i][j].shortDesc.length > 5 ? bots[i][j].shortDesc.substr(0, 30) + "..." : bots[i][j].shortDesc %></strong></p>
                                 <div class="button-view" id="bot-card-bottons" role="group" aria-label="Basic example" style="width: 100%;">
                                      <a href="/bots/<%= bots[i][j].botID %>" style="border-radius: 15px;background-color: #ffffff;color: black;" type="button" class="btn btn-primary">Просмотр</a>  
                                 </div>
