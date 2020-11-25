@@ -32,23 +32,23 @@
             <div class="row" style="width: 100%;">
                 <div class="col-sm-2">
                     <% if (botInfo.avatar) { %>
-                        <img class="card-img-top" src="https://cdn.discordapp.com/avatars/<%= botInfo.id %>/<%= botInfo.avatar %>.png?size=1280">
+                        <img class="card-img-top" style="border-radius: 20%;" src="https://cdn.discordapp.com/avatars/<%= botInfo.id %>/<%= botInfo.avatar %>.png?size=1280">
                     <% } else { %>
-                        <img class="card-img-top" src="https://cdn.discordapp.com/embed/avatars/<%= (botInfo.id % 5) %>.png">
+                        <img class="card-img-top" style="border-radius: 20%;" src="https://cdn.discordapp.com/embed/avatars/<%= (botInfo.id % 5) %>.png">
                     <% } %>
+                    <div class="status" style="padding-top: 10%;text-align: center;">
+                        <% if (botMember && botMember.presence && botMember.presence.status === "online") { %>
+                            <span class="badge badge-success" style="font-size: 16px;border-radius: 20px;padding-right: 15px;padding-left: 15px;">Онлайн</span>
+                        <% } else if (botMember && botMember.presence && botInfo.presence.status === "idle") { %>
+                            <span class="badge badge-warning" style="font-size: 16px;border-radius: 20px;padding-right: 15px;padding-left: 15px;">Idle</span>
+                        <% } else if (botMember && botMember.presence && botInfo.presence.status === "dnd") { %>
+                            <span class="badge badge-danger" style="font-size: 16px;border-radius: 20px;padding-right: 15px;padding-left: 15px;">DND</span>
+                        <% } else { %>
+                            <span class="badge badge-secondary" style="font-size: 16px;border-radius: 20px;">Офлайн</span>
+                        <% } %>
+                        </div>
                 </div>
                 <div class="col-sm">
-                    <div class="status" style="padding-left: 21%;">
-                    <% if (botMember && botMember.presence && botMember.presence.status === "online") { %>
-                        <span class="badge badge-success" style="font-size: 16px;border-radius: 20px;padding-right: 15px;padding-left: 15px;">Онлайн</span>
-                    <% } else if (botMember && botMember.presence && botInfo.presence.status === "idle") { %>
-                        <span class="badge badge-warning" style="font-size: 16px;border-radius: 20px;padding-right: 15px;padding-left: 15px;">Idle</span>
-                    <% } else if (botMember && botMember.presence && botInfo.presence.status === "dnd") { %>
-                        <span class="badge badge-danger" style="font-size: 16px;border-radius: 20px;padding-right: 15px;padding-left: 15px;">DND</span>
-                    <% } else { %>
-                        <span class="badge badge-secondary" style="font-size: 16px;border-radius: 20px;">Офлайн</span>
-                    <% } %>
-                    </div>
                     <h3><%= botInfo.username %><small class="text-muted">#<%= botInfo.discriminator %></small></h3>
                     <span class="badge badge-primary" style="font-size: 16px;border-radius: 0 20px;padding-right: 15px;padding-left: 15px;">Серверов: <%= botDB.guildsCount %></span>
                     <% if(botInfo.id == '756878980123983995') { %>
@@ -66,7 +66,7 @@
                 </div>
                 </div>
                 <% if (botDB.botTags.length) { %>
-                    <p style="color: white; mix-blend-mode: difference; font-size: 16px;padding-top: 3%;padding-right: 73%;">Теги: 
+                    <p style="color: white; mix-blend-mode: difference; font-size: 16px;text-align: right;">Теги: 
                         <% botDB.botTags.forEach(botTag => { %>
                             <span class="badge badge-dark" style="background-color:#4a5da1;"><%= botTag %></span>
                         <% }) %>
