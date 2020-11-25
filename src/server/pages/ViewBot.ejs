@@ -38,16 +38,18 @@
                     <% } %>
                 </div>
                 <div class="col-sm">
-                    <h3><%= botInfo.username %><small class="text-muted">#<%= botInfo.discriminator %></small></h3>
+                    <div class="status" style="padding-left: 21%;">
                     <% if (botMember && botMember.presence && botMember.presence.status === "online") { %>
-                        <span class="badge badge-success" style="font-size: 16px;border-radius: 0 20px;padding-right: 15px;padding-left: 15px;">Онлайн</span>
+                        <span class="badge badge-success" style="font-size: 16px;border-radius: 20px;padding-right: 15px;padding-left: 15px;">Онлайн</span>
                     <% } else if (botMember && botMember.presence && botInfo.presence.status === "idle") { %>
-                        <span class="badge badge-warning" style="font-size: 16px;border-radius: 0 20px;padding-right: 15px;padding-left: 15px;">Idle</span>
+                        <span class="badge badge-warning" style="font-size: 16px;border-radius: 20px;padding-right: 15px;padding-left: 15px;">Idle</span>
                     <% } else if (botMember && botMember.presence && botInfo.presence.status === "dnd") { %>
-                        <span class="badge badge-danger" style="font-size: 16px;border-radius: 0 20px;padding-right: 15px;padding-left: 15px;">DND</span>
+                        <span class="badge badge-danger" style="font-size: 16px;border-radius: 20px;padding-right: 15px;padding-left: 15px;">DND</span>
                     <% } else { %>
-                        <span class="badge badge-secondary" style="font-size: 16px;border-radius: 0 20px;">Офлайн</span>
+                        <span class="badge badge-secondary" style="font-size: 16px;border-radius: 20px;">Офлайн</span>
                     <% } %>
+                    </div>
+                    <h3><%= botInfo.username %><small class="text-muted">#<%= botInfo.discriminator %></small></h3>
                     <span class="badge badge-primary" style="font-size: 16px;border-radius: 0 20px;padding-right: 15px;padding-left: 15px;">Серверов: <%= botDB.guildsCount %></span>
                     <% if(botInfo.id == '756878980123983995') { %>
                         <span class="badge badge-danger" style="font-size: 16px;border-radius: 0 20px;padding-right: 15px;padding-left: 15px;">БУСТ</span>
@@ -55,8 +57,9 @@
                     <span class="badge badge-danger" style="font-size: 16px;border-radius: 0 20px;padding-right: 15px;padding-left: 15px;">Голосов: <%= dailyUpvotes %></span>
                     <span class="badge badge-info" style="font-size: 16px;border-radius: 0 20px;padding-right: 15px;padding-left: 15px;">Всего голосов: <%= botDB.totalUpvotes %></span>
                     <% } %>
-                    <hr class="my-4">
+                    <hr class="my-4" style="background-color: #4a5da1">
                     <div id="bot-description"><%= botDB.longDesc %></div>
+                    <hr style="background-color: #4a5da1;">
                 <div class="info2" style="padding-right: 10%;">
                     <p style="color: white; mix-blend-mode: difference; font-size: 16px;">Префикс: <code style="padding: 3px 8px; font-weight: bold;"><%= botDB.prefix %></code></p>
                     <p style="color: white; mix-blend-mode: difference; font-size: 16px;">Владелец: <span class="text-primary"><strong><%= botOwner.username %>#<%= botOwner.discriminator %></strong></span></p>
@@ -65,12 +68,13 @@
                 <% if (botDB.botTags.length) { %>
                     <p style="color: white; mix-blend-mode: difference; font-size: 16px;padding-top: 3%;padding-right: 73%;">Теги: 
                         <% botDB.botTags.forEach(botTag => { %>
-                            <span class="badge badge-dark"><%= botTag %></span>
+                            <span class="badge badge-dark" style="background-color:#4a5da1;"><%= botTag %></span>
                         <% }) %>
                     </p>
                 <% } %>
             </div>
         </div>
+        <hr style="background-color: #4a5da1;">
              <div class="buttons">
                 <% if (botDB.customInvite) { %>
                     <a href="<%= botDB.customInvite %>" type="button" class="btn btn-primary pr-3 pl-3 mr-1">Приглашение</a>
