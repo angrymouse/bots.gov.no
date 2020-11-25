@@ -23,13 +23,11 @@
     </script>
     <%- include("./components/header.ejs") %>
 </head>
-<body style="background-color:  #23272A;position: static;">
+<body style="position: static;">
     <%- include("./components/navbar.ejs", { bot, user }) %>
-
     <div style="background-color: #23272A;" class="container">
-        <div id="particle-canvas"></div>
-        <script  src="./particles.js"></script>
-        <script src='https://rawgit.com/JulianLaval/canvas-particle-network/master/particle-network.min.js'></script>
+        <div style="padding-bottom: 10%;" class="info">
+            </div>
         <div style="background-color: #2C2F33;border-radius: 30px;" class="jumbotron mt-5">
             <div class="row" style="width: 100%;">
                 <div class="col-sm-2">
@@ -58,39 +56,39 @@
                     <span class="badge badge-info" style="font-size: 16px;border-radius: 0 20px;padding-right: 15px;padding-left: 15px;">Всего голосов: <%= botDB.totalUpvotes %></span>
                     <% } %>
                     <hr class="my-4">
-                    <% if (botDB.customInvite) { %>
-                        <a href="<%= botDB.customInvite %>" type="button" class="btn btn-primary pr-3 pl-3 mr-1">Приглашение</a>
-                    <% } else { %>
-                        <a href="https://discordapp.com/oauth2/authorize?client_id=<%= botInfo.id %>&scope=bot&permissions=0" type="button" class="btn btn-primary pr-3 pl-3 mr-1">Приглашение</a>
-                    <% } %>
-                    <a href="/bots/<%= botInfo.id %>/vote" type="button" class="btn btn-info pr-3 pl-3 mr-1">Проголосовать</a>
-                    <% if (botDB.botWebsite) { %>
-                        <a href="<%= botDB.botWebsite %>" type="button" class="btn btn-success pr-3 pl-3 mr-1">Сайт</a>
-                    <% } %>
-                    <% if (botDB.botServer) { %>
-                        <a href="<%= botDB.botServer %>" type="button" class="btn btn-info pr-3 pl-3 mr-1">Сервер Discord</a>
-                    <% } %>
-                    <% if (user && user.id === botDB.ownerID) { %>
-                        <a href="/bots/<%= botInfo.id %>/edit" style="border-radius: 0 20px;" type="button" class="btn btn-warning pr-3 pl-3 mr-1">Редактировать</a>
-                        <a href="/bots/<%= botInfo.id %>/delete" type="button" class="btn btn-danger pr-3 pl-3 mr-1">Удалить</a>
-                    <% } %>
+                    <div id="bot-description"><%= botDB.longDesc %></div>
+                <div class="info2" style="padding-right: 10%;">
+                    <p style="color: white; mix-blend-mode: difference; font-size: 16px;">Префикс: <code style="padding: 3px 8px; font-weight: bold;"><%= botDB.prefix %></code></p>
+                    <p style="color: white; mix-blend-mode: difference; font-size: 16px;">Владелец: <span class="text-primary"><strong><%= botOwner.username %>#<%= botOwner.discriminator %></strong></span></p>
                 </div>
+                </div>
+                <% if (botDB.botTags.length) { %>
+                    <p style="color: white; mix-blend-mode: difference; font-size: 16px;padding-top: 3%;padding-right: 73%;">Теги: 
+                        <% botDB.botTags.forEach(botTag => { %>
+                            <span class="badge badge-dark"><%= botTag %></span>
+                        <% }) %>
+                    </p>
+                <% } %>
             </div>
         </div>
-        <div class="info">
-            <p style="color: white; mix-blend-mode: difference; font-size: 16px;">Префикс: <code style="padding: 3px 8px; font-weight: bold;"><%= botDB.prefix %></code></p>
-            <p style="color: white; mix-blend-mode: difference; font-size: 16px;">Владелец: <span class="text-primary"><strong><%= botOwner.username %>#<%= botOwner.discriminator %></strong></span></p>
-            <% if (botDB.botTags.length) { %>
-                <p style="color: white; mix-blend-mode: difference; font-size: 16px;">Теги: 
-                    <% botDB.botTags.forEach(botTag => { %>
-                        <span class="badge badge-dark"><%= botTag %></span>
-                    <% }) %>
-                </p>
-            <% } %>
+             <div class="buttons">
+                <% if (botDB.customInvite) { %>
+                    <a href="<%= botDB.customInvite %>" type="button" class="btn btn-primary pr-3 pl-3 mr-1">Приглашение</a>
+                <% } else { %>
+                    <a href="https://discordapp.com/oauth2/authorize?client_id=<%= botInfo.id %>&scope=bot&permissions=0" type="button" class="btn btn-primary pr-3 pl-3 mr-1">Приглашение</a>
+                <% } %>
+                <a href="/bots/<%= botInfo.id %>/vote" type="button" class="btn btn-info pr-3 pl-3 mr-1">Проголосовать</a>
+                <% if (botDB.botWebsite) { %>
+                    <a href="<%= botDB.botWebsite %>" type="button" class="btn btn-success pr-3 pl-3 mr-1">Сайт</a>
+                <% } %>
+                <% if (botDB.botServer) { %>
+                    <a href="<%= botDB.botServer %>" type="button" class="btn btn-info pr-3 pl-3 mr-1">Сервер Discord</a>
+                <% } %>
+                <% if (user && user.id === botDB.ownerID) { %>
+                    <a href="/bots/<%= botInfo.id %>/edit" style="border-radius: 0 20px;" type="button" class="btn btn-warning pr-3 pl-3 mr-1">Редактировать</a>
+                    <a href="/bots/<%= botInfo.id %>/delete" type="button" class="btn btn-danger pr-3 pl-3 mr-1">Удалить</a>
+                <% } %>
         </div>
-            <div class="card-body">
-                <div id="bot-description"><%= botDB.longDesc %></div>
-            </div>
         </div>
     </div>
     <hr>

@@ -181,7 +181,7 @@ h1 {
     
     .content {
     text-align: center;
-    background-color: #2C2F33;
+    background-image: url(/assets/fons.png);
     text-align: center;
     min-height: 75%;
     margin: -.1em 0 0 0;
@@ -498,6 +498,9 @@ color: #ffffff;
   position: absolute;
 }
 /* viewbot */  
+.buttons{
+  text-align: center ;
+}
 /* vutton */
 /* Слоган + поиск */
 .anim-typewriter{

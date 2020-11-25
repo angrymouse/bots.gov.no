@@ -33,14 +33,6 @@
                                 <% } else { %>
                                     <img class="card-img-top" src="https://cdn.discordapp.com/embed/avatars/<%= (bots[i][j].botID % 5) %>.png" alt="<%= bots[i][j].tag %>">
                                 <% } %>
-                                <style>
-                                    .card-body {
-                                    transition: 1s; 
-                                  }
-                                    .card-body:hover {
-                                     transform: scale(1.2); 
-                                     }
-                                </style>
                                 <div class="card-body">
                                     <h4 class="card-title" style="margin-bottom: 0;"><%= bots[i][j].tag %></h4>
                                     <center>
