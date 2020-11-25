@@ -56,7 +56,7 @@ $(function () {
             success: function (resp) {
                 upvoteBtn.addClass("disabled");
                 if(resp.ok) {
-                    upvoteBtn.text("Апнути!");
+                    upvoteBtn.text("Апнуто!");
                 } else if(!resp.ok && resp.remaining) {
                     upvoteBtn.text(`Ты уже апал бота, вернись ${moment.duration(resp.remaining).format('H[h] m[m] s[s]')}`);
                 } else {

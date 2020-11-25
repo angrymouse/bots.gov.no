@@ -17,7 +17,7 @@ module.exports = (client) => {
             await client.queue.autoDelete(client, botID, "Бота не сущевствует");
             return res.redirect("/404");
         }
-        const dailyUpvotes = await client.database.Upvotes.get(`${botID}_upvotes_${new Date().toISOString().slice(0, 10)}`) || 0;
+        const dailyUpvotes = await client.database.Upvotes.get(`${botID}_upvotes_${new Date().toISOString().slice(0, 1000)}`) || 0;
         res.render("BotVote.ejs", { bot: req.bot, botDB, botInfo: bot, user: (req.user || null), dailyUpvotes });
     });
 
@@ -49,7 +49,7 @@ module.exports = (client) => {
         const botID = `${req.params.botID}`;
         const botDB = await client.database.Bots.findOne({ where: { botID } });
         if(!botDB || !botDB.dataValues) return res.redirect("/404");
-        if(req.user.id !== botDB.dataValues.ownerID) return res.redirect("/404");
+        if(req.user.id !== botDB.dataValues.ownerID || req.user.staff) return res.redirect("/404");
         const bot = await client.users.fetch(botID).catch(() => {}) || null;
         if(!bot) {
             await client.queue.autoDelete(client, botID, "Бота не сущевствует");
@@ -62,7 +62,7 @@ module.exports = (client) => {
         const botID = `${req.params.botID}`;
         const botDB = await client.database.Bots.findOne({ where: { botID } });
         if(!botDB || !botDB.dataValues) return res.redirect("/404");
-        if(req.user.id !== botDB.dataValues.ownerID) return res.redirect("/404");
+        if(req.user.id !== botDB.dataValues.ownerID || req.user.staff) return res.redirect("/404");
         client.queue.handleEdit(client, botID, req.body, req.user)
         .then(() => {
             return res.status(201).json({ message: "Edited the bot", code: "OK" });
@@ -127,7 +127,7 @@ module.exports = (client) => {
         }
         botDB.dataValues.botTags = botDB.dataValues.botTags.map(x => `${_.startCase(_.toLower(x))}`);
         const dailyUpvotes = await client.database.Upvotes.get(`${botID}_upvotes_${new Date().toISOString().slice(0, 10)}`) || 0;
-        res.render("ViewBot.ejs", { bot: req.bot, botDB, botInfo: botMember ? botMember.user : bot, botMember, user: (req.user || null), botOwner: owner.user ? owner.user : owner, dailyUpvotes });
+        res.render("ViewBot.ejs", { bot: req.bot, botDB, botInfo: botMember ? botMember.user : bot, botMember, user: (req.user || null), botOwner: owner.user ? owner.user : owner, dailyUpvotes, staff: req.user.staff });
     });
 
     router.get("/", async (req, res) => {
