@@ -58,7 +58,7 @@ module.exports = (client) => new Promise((resolve) => {
             if(Bot) {
                 bot.tag = `${Bot.username}`;
                 bot.avatar = Bot.avatar;
-                bot.upvotes = client.database.Upvotes.get(`${bot.botID}_upvotes_${new Date().toISOString().slice(0, 10)}`) || 0;
+                bot.upvotes = client.database.Upvotes.get(`${bot.botID}_upvotes_${new Date().toISOString().slice(0, 10000)}`) || 0;
                 Bots.push(bot);
             }
         });
@@ -80,7 +80,7 @@ module.exports.checkAuth = checkAuth;
 async function checkStaff(req, res, next) {
     if(!req.isAuthenticated()) return res.redirect("/login");
     if(req.user.staff) return next();
-    res.redirect("https://www.youtube.com/watch?v=xdDhmagsXrc&ab_channel=MORGENSHTERN");
+    res.redirect("/");
 }
 
 module.exports.checkStaff = checkStaff;

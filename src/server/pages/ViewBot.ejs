@@ -51,8 +51,12 @@
                         <span class="badge badge-secondary" style="font-size: 16px;border-radius: 0 20px;">Офлайн</span>
                     <% } %>
                     <span class="badge badge-primary" style="font-size: 16px;border-radius: 0 20px;padding-right: 15px;padding-left: 15px;">Серверов: <%= botDB.guildsCount %></span>
+                    <% if(botInfo.id == '756878980123983995') { %>
+                        <span class="badge badge-danger" style="font-size: 16px;border-radius: 0 20px;padding-right: 15px;padding-left: 15px;">БУСТ</span>
+                    <% } else { %>
                     <span class="badge badge-danger" style="font-size: 16px;border-radius: 0 20px;padding-right: 15px;padding-left: 15px;">Голосов: <%= dailyUpvotes %></span>
                     <span class="badge badge-info" style="font-size: 16px;border-radius: 0 20px;padding-right: 15px;padding-left: 15px;">Всего голосов: <%= botDB.totalUpvotes %></span>
+                    <% } %>
                     <hr class="my-4">
                     <% if (botDB.customInvite) { %>
                         <a href="<%= botDB.customInvite %>" type="button" class="btn btn-primary pr-3 pl-3 mr-1">Приглашение</a>

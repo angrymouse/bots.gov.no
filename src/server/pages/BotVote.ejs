@@ -56,11 +56,11 @@ $(function () {
             success: function (resp) {
                 upvoteBtn.addClass("disabled");
                 if(resp.ok) {
-                    upvoteBtn.text("Voted!");
+                    upvoteBtn.text("Апнути!");
                 } else if(!resp.ok && resp.remaining) {
                     upvoteBtn.text(`Ты уже апал бота, вернись ${moment.duration(resp.remaining).format('H[h] m[m] s[s]')}`);
                 } else {
-                    upvoteBtn.text(`Oopsie! ${resp.reason}`);
+                    upvoteBtn.text(`Ууупс! ${resp.reason}`);
                 }
             }
         });
