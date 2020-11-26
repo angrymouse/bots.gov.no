@@ -88,7 +88,7 @@
                 <% if (botDB.botServer) { %>
                     <a href="<%= botDB.botServer %>" type="button" class="btn btn-info pr-3 pl-3 mr-1">Сервер Discord</a>
                 <% } %>
-                <% if (user && user.id === botDB.ownerID || staff) { %>
+                <% if (user && user.id === botDB.ownerID | staff) { %>
                     <a href="/bots/<%= botInfo.id %>/edit" style="border-radius: 0 20px;" type="button" class="btn btn-warning pr-3 pl-3 mr-1">Редактировать</a>
                     <a href="/bots/<%= botInfo.id %>/delete" type="button" class="btn btn-danger pr-3 pl-3 mr-1">Удалить</a>
                 <% } %>
