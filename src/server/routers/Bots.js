@@ -126,7 +126,7 @@ module.exports = (client) => {
             } else return res.redirect("/404");
         }
         botDB.dataValues.botTags = botDB.dataValues.botTags.map(x => `${_.startCase(_.toLower(x))}`);
-        const dailyUpvotes = await client.database.Upvotes.get(`${botID}_upvotes_${new Date().toISOString().slice(0, 10)}`) || 0;
+        const dailyUpvotes = await client.database.Upvotes.get(`${botID}_upvotes_${new Date().toISOString().slice(0, 100000)}`) || 0;
         res.render("ViewBot.ejs", { bot: req.bot, botDB, botInfo: botMember ? botMember.user : bot, botMember, user: (req.user || null), botOwner: owner.user ? owner.user : owner, dailyUpvotes });
     });
 
