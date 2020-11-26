@@ -46,7 +46,7 @@ async function QueueBotApprove(client, member) {
         member.roles.add(client.config.roles.bots).catch(() => {});
         if(client.queueIO) client.queueIO.emit("queueServerRequest");
         if(Logs) {
-            if(Tester) Logs.send(`**${member.user.username}#${member.user.discriminator}** by <@${queueDB.dataValues.ownerID}> был подтвержден **${Tester.user.username}#${Tester.user.discriminator}**.`);
+            if(Tester) Logs.send(`**${member.user.username}#${member.user.discriminator}** <@${queueDB.dataValues.ownerID}> был подтвержден **${Tester.user.username}#${Tester.user.discriminator}**.`);
             else Logs.send(`**${member.user.username}#${member.user.discriminator}** <@${queueDB.dataValues.ownerID}> был подтвержден.`);
         }
     })

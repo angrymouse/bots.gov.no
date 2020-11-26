@@ -17,7 +17,7 @@ module.exports = (client) => {
             await client.queue.autoDelete(client, botID, "Бота не сущевствует");
             return res.redirect("/404");
         }
-        const dailyUpvotes = await client.database.Upvotes.get(`${botID}_upvotes_${new Date().toISOString().slice(0, 1000)}`) || 0;
+        const dailyUpvotes = await client.database.Upvotes.get(`${botID}_upvotes_${new Date().toISOString().slice(0, 10)}`) || 0;
         res.render("BotVote.ejs", { bot: req.bot, botDB, botInfo: bot, user: (req.user || null), dailyUpvotes });
     });
 
@@ -43,14 +43,13 @@ module.exports = (client) => {
             totalUpvotes: (parseInt(botDB.dataValues.totalUpvotes) || 0) + 1
         }, { where: { botID } });
         return res.json({ ok: true });
-
     });
 
     router.get("/:botID/edit", checkAuth, async (req, res) => {
         const botID = `${req.params.botID}`;
         const botDB = await client.database.Bots.findOne({ where: { botID } });
         if(!botDB || !botDB.dataValues) return res.redirect("/404");
-        if(req.user.id !== botDB.dataValues.ownerID || req.user.staff) return res.redirect("/404");
+        if(req.user.id !== botDB.dataValues.ownerID) return res.redirect("/404");
         const bot = await client.users.fetch(botID).catch(() => {}) || null;
         if(!bot) {
             await client.queue.autoDelete(client, botID, "Бота не сущевствует");
@@ -63,7 +62,7 @@ module.exports = (client) => {
         const botID = `${req.params.botID}`;
         const botDB = await client.database.Bots.findOne({ where: { botID } });
         if(!botDB || !botDB.dataValues) return res.redirect("/404");
-        if(req.user.id !== botDB.dataValues.ownerID || req.user.staff) return res.redirect("/404");
+        if(req.user.id !== botDB.dataValues.ownerID) return res.redirect("/404");
         client.queue.handleEdit(client, botID, req.body, req.user)
         .then(() => {
             return res.status(201).json({ message: "Edited the bot", code: "OK" });
@@ -121,7 +120,7 @@ module.exports = (client) => {
             }
         } else {
             if(!req.user) return res.redirect("/404");
-            if(botDB.dataValues.ownerID === req.user.id) {
+            if(botDB.dataValues.ownerID === req.user.id || req.user.staff) {
                 bot = await client.users.fetch(botID).catch(() => {}) || null;
                 owner = await client.users.fetch(botDB.ownerID).catch(() => {}) || null;
             } else return res.redirect("/404");
@@ -145,7 +144,7 @@ module.exports = (client) => {
             if(Bot) {
                 bot.tag = `${Bot.username}`;
                 bot.avatar = Bot.avatar;
-                bot.upvotes = req.bot.database.Upvotes.get(`${bot.botID}_upvotes_${new Date().toISOString().slice(0, 5000)}`) || 0;
+                bot.upvotes = req.bot.database.Upvotes.get(`${bot.botID}_upvotes_${new Date().toISOString().slice(0, 10)}`) || 0;
                 Bots.push(bot);
             }
         });
