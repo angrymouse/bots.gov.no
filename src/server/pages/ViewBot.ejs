@@ -57,9 +57,9 @@
                     <span class="badge badge-danger" style="font-size: 16px;border-radius: 0 20px;padding-right: 15px;padding-left: 15px;">Голосов: <%= dailyUpvotes %></span>
                     <span class="badge badge-info" style="font-size: 16px;border-radius: 0 20px;padding-right: 15px;padding-left: 15px;">Всего голосов: <%= botDB.totalUpvotes %></span>
                     <% } %>
-                    <hr class="my-4" style="background-color: #313337">
+                    <hr class="my-4" style="background-color: #4a5da1">
                     <div id="bot-description"><%= botDB.longDesc %></div>
-                    <hr style="background-color: #313337">
+                    <hr style="background-color: #4a5da1;">
                 <div class="info2" style="padding-right: 10%;">
                     <p style="color: white; mix-blend-mode: difference; font-size: 16px;">Префикс: <code style="padding: 3px 8px; font-weight: bold;"><%= botDB.prefix %></code></p>
                     <p style="color: white; mix-blend-mode: difference; font-size: 16px;">Владелец: <span class="text-primary"><strong><%= botOwner.username %>#<%= botOwner.discriminator %></strong></span></p>
@@ -74,7 +74,7 @@
                 <% } %>
             </div>
         </div>
-        <hr style="background-color: #313337;">
+        <hr style="background-color: #4a5da1;">
              <div class="buttons">
                 <% if (botDB.customInvite) { %>
                     <a href="<%= botDB.customInvite %>" type="button" class="btn btn-primary pr-3 pl-3 mr-1">Приглашение</a>
