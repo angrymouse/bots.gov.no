@@ -43,6 +43,7 @@ module.exports = (client) => {
             totalUpvotes: (parseInt(botDB.dataValues.totalUpvotes) || 0) + 1
         }, { where: { botID } });
         return res.json({ ok: true });
+
     });
 
     router.get("/:botID/edit", checkAuth, async (req, res) => {
@@ -120,7 +121,7 @@ module.exports = (client) => {
             }
         } else {
             if(!req.user) return res.redirect("/404");
-            if(botDB.dataValues.ownerID === req.user.id || req.user.staff) {
+            if(botDB.dataValues.ownerID === req.user.id) {
                 bot = await client.users.fetch(botID).catch(() => {}) || null;
                 owner = await client.users.fetch(botDB.ownerID).catch(() => {}) || null;
             } else return res.redirect("/404");
