@@ -1,4 +1,5 @@
 module.exports.handleAdd = (client, { id, prefix, description: { short, long }, website, support, invite, tags }, user) => {
+    const { MessageEmbed } = require('discord.js');
     return new Promise(async (resolve, reject) => {
         let bot = null;
         try {

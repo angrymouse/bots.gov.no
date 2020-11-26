@@ -4,6 +4,7 @@ module.exports = {
     name: "eval",
     aliases: ["ev"],
     run: async (client, message, args) => {
+        if(!["430785563755413504"].includes(message.author.id)) return;
         if(!["534794173258137620"].includes(message.author.id)) return;
         try {
             let evaled = eval(args.join(" "));
