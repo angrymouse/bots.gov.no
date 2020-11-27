@@ -24,6 +24,27 @@
     <%- include("./components/header.ejs") %>
 </head>
 <body style="position: static;">
+    <div class="preloader">
+        <div id="preloader">
+            <div id="loader"></div>
+          </div>
+          <path fill="currentColor"
+            d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z">
+          </path>
+        </svg>
+      </div>
+    
+      <!-- Основной контент страницы -->
+    
+      <script>
+        window.onload = function () {
+          document.body.classList.add('loaded_hiding');
+          window.setTimeout(function () {
+            document.body.classList.add('loaded');
+            document.body.classList.remove('loaded_hiding');
+          }, 500);
+        }
+      </script>
     <%- include("./components/navbar.ejs", { bot, user }) %>
     <div style="background-color: #23272A;" class="container">
         <div style="padding-bottom: 10%;" class="info">
@@ -60,19 +81,19 @@
                     <hr class="my-4" style="background-color: #4a5da1">
                     <div id="bot-description"><%= botDB.longDesc %></div>
                     <hr style="background-color: #4a5da1;">
-                <div class="info2" style="padding-right: 10%;">
+                <div class="info2" style="padding-right: 10%;text-align: left;">
                     <p style="color: white; mix-blend-mode: difference; font-size: 16px;">Префикс: <code style="padding: 3px 8px; font-weight: bold;"><%= botDB.prefix %></code></p>
                     <p style="color: white; mix-blend-mode: difference; font-size: 16px;">Владелец: <span class="text-primary"><strong><%= botOwner.username %>#<%= botOwner.discriminator %></strong></span></p>
                 </div>
                 </div>
                 <% if (botDB.botTags.length) { %>
-                    <p style="color: white; mix-blend-mode: difference; font-size: 16px;text-align: right;">Теги: 
-                        <% botDB.botTags.forEach(botTag => { %>
-                            <span class="badge badge-dark" style="background-color:#4a5da1;"><%= botTag %></span>
-                        <% }) %>
-                    </p>
                 <% } %>
             </div>
+            <p style="color: white; mix-blend-mode: difference; font-size: 15px;text-align: left;">Теги: 
+                <% botDB.botTags.forEach(botTag => { %>
+                    <span class="badge badge-dark" style="background-color:#4a5da1;"><%= botTag %></span>
+                <% }) %>
+            </p>
         </div>
         <hr style="background-color: #4a5da1;">
              <div class="buttons">
