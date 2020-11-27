@@ -8,10 +8,10 @@ module.exports = {
  if(!message.member.permissions.has("ADMINISTRATOR")) return message.channel.send('У вас нет определенных прав. Обратитесь к администратору.')
  switch (args[0]) {
     case "add":
-        let userr = message.guild.member(message.mentions.users.first() || message.guild.members.cache.find(m => m.user.username == args[0] || m.id == args[0]))
-        if(!userr) return message.reply('Вы не указали пользователя')
+        let user = message.guild.member(message.mentions.users.first() || message.guild.members.cache.find(m => m.user.username == args[0] || m.id == args[0]))
+        if(!user) return message.reply('Вы не указали пользователя')
         if(!message.member.permissions.has("ADMINISTRATOR")) return message.channel.send('У вас нет определенных прав. Обратитесь к администратору.')
-        userr.member.roles.add('781026350328053790');
+        user.member.roles.add('781026350328053790');
 break;
 case "remove":
         let userr = message.guild.member(message.mentions.users.first() || message.guild.members.cache.find(m => m.user.username == args[0] || m.id == args[0]))
