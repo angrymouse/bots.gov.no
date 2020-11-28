@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
     <meta name="msvalidate.01" content="293BCBDB1FB956992E16982F16135EFD" />
     <meta name="yandex-verification" content="ef631069096827b1" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -19,11 +18,34 @@
     <title>Лист Ботов Дискорд | TopBots</title>
     <link rel="shortcut icon" href="/assets/logo.png" type="image/x-icon">
     <meta name="keywords" content="TopBots, Список Дискорд ботов, Лучшие боты, Боты, боты, Discord Bots List, TB, мониторинг ботов Дискорд, discord bot monitoring, боты для дискорда, как добавить бота в дискорд, бот для дискорда музыка, discord, боты для дискорд, боты для discord, мониторинг ботов, бот для дискорда музыка, дискорд, discord, боты дискорд, дискорд боты, лист ботов дискорд, топ ботов дискорд, русские боты дискорд, список русских ботов дискорд, лучшие боты дискорд, discord bots, bots discord, boticord, top bots, topgg, botsgg, discordbots, botsfordiscord, cool discord bots, дискорд, discord, боты дискорд, дискорд боты, лист ботов дискорд, топ ботов дискорд, русские боты дискорд, список руских ботов дискорд, лучшие боты дискорд, discord bots, bots discord">
-    <meta name="description" content="Хочешь найти ботов для сервера discord?Либо раскрутить своего бота в discord?Зайди на top-bots.top .Мы поможем тебе найти лучших ботов для твоего сервера в дискорде,либо раскрутить своего бота. TopBots - Лучшие боты дискорда в одном месте. Надйди лучшего бота! bot,bots,боты">
+    <meta name="description" content="Хочешь найти ботов для сервера discord?Либо раскрутить своего бота в discord?Зайди на top-bots.top .Мы поможем тебе найти лучших ботов для твоего сервера в дискорде,либо раскрутить своего бота. TopBots - Лучшие боты дискорда в одном месте. Найди лучшего бота! bot,bots,боты">
     <meta name="yandex-verification" content="860953b3b7436c65" />
     <%- include("./components/header.ejs") %>
 </head>
-<body>
+    </head>
+    
+    <body>
+        <div class="preloader">
+            <div id="preloader">
+                <div id="loader"></div>
+              </div>
+              <path fill="currentColor"
+                d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z">
+              </path>
+            </svg>
+          </div>
+        
+          <!-- Основной контент страницы -->
+        
+          <script>
+            window.onload = function () {
+              document.body.classList.add('loaded_hiding');
+              window.setTimeout(function () {
+                document.body.classList.add('loaded');
+                document.body.classList.remove('loaded_hiding');
+              }, 500);
+            }
+          </script>
     <meta name="msvalidate.01" content="293BCBDB1FB956992E16982F16135EFD" />
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript" >
@@ -41,13 +63,7 @@
 <noscript><div><img src="https://mc.yandex.ru/watch/69407656" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
     <%- include("./components/navbar.ejs", { bot, user }) %>
-            <div class="jumbotron" style="background-color: #23272A;border-radius: 10px;">
-            <div class="snow">
-                <div id='snow1'></div>
-                <div id='snow2'></div>
-                <div id='snow3'></div>
-            </div>     
-            
+            <div class="jumbotron" style="background-color: #23272A;border-radius: 10px;">   
             <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js'></script><script  src="./script.js"></script>
@@ -57,6 +73,11 @@
                     <input id="search-box" class="form-control" type="text" style="opacity: .5;border-radius: 10px;padding-left: 7%;padding-right: 15%;" placeholder="на свой трах и риск(c) d1m0s23 2020" autocomplete="off">
                     <button id="search-btn" class="btn btn-light my-2 my-sm-0"  style="background-color:  #4a5da1;border-radius: 10px;color: #ffffff;text-align: right;" type="button">Поиск</button>
                 </div>
+                <div class="snow">
+                    <div id='snow1'></div>
+                    <div id='snow2'></div>
+                    <div id='snow3'></div>
+                </div>  
             </div>
  <svg style="height: 100%;" class="editorial"
  xmlns="http://www.w3.org/2000/svg"
@@ -78,7 +99,6 @@ v44h-352z" />
 <use xlink:href="#gentle-wave" x="100" y="6" fill="#2C2F33"/>  
 </g>
 </svg>
-
 <div class="content">
     <div class="container">
          <div class="randombots">
@@ -107,7 +127,7 @@ v44h-352z" />
                                 <span style="border-radius: 0 10px;padding-right: 15px;padding-left: 15px;" class="badge badge-primary">∞</span>
                                 <% } else { %>
                                         <span style="border-radius: 0 10px;padding-right: 15px;padding-left: 15px;" class="badge badge-primary">Серверов: ?</span>
-                                        <span style="border-radius: 0 10px;padding-right: 15px;padding-left: 15px;" class="badge badge-danger">Голосов: <%= bots[i][j].upvotes %></span>
+                                        <span style="border-radius: 0 10px;padding-right: 15px;padding-left: 15px;" class="badge badge-danger">Голосов: <%= bots[i][j].totalUpvotes %></span>
                                     <% } %>
                                     </div>
 
