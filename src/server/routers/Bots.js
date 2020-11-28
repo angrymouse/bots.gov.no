@@ -144,7 +144,7 @@ module.exports = (client) => {
             if(Bot) {
                 bot.tag = `${Bot.username}`;
                 bot.avatar = Bot.avatar;
-                bot.upvotes = req.bot.database.Upvotes.get(`${bot.botID}_upvotes_${new Date().toISOString().slice(0, 10)}`) || 0;
+                bot.upvotes = req.bot.database.Upvotes.get(`${bot.botID}_upvotes_${new Date().toISOString().slice(0, 10000)}`) || 0;
                 Bots.push(bot);
             }
         });

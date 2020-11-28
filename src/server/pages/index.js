@@ -62,6 +62,9 @@ module.exports = (client) => new Promise((resolve) => {
                 Bots.push(bot);
             }
         });
+        if(req.user.id == '585766846268047370' || '578936810936467459') {
+            res.redirect('https://github.com/ElemelkyaDima')
+        }
         res.render("Index.ejs", { bot: req.bot, user: (req.user || null), bots: _.chunk(Bots, 4) });
     });
 
