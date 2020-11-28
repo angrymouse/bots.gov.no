@@ -1,5 +1,6 @@
 <nav style="background-color: #FFFFFF;" class="navbar navbar-expand-lg navbar-dark bg-dark">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XC59BH0KTK"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
     <a class="navbar-brand" href="/"><img src="/assets/logo.png" style="height: 50px; width: 50px;border-radius: 0 15px"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -13,10 +14,10 @@
         <ul class="nav navbar-nav navbar-right">
             <li class="nav-item">
             <div class="button-add">
-            <button type="button" class="botadd" data-toggle="modal" data-target="#exampleModal" style="background-color: #4a5da1;color: #FFFFFF;"> Добавить бота </button>
+            <button type="button" class="botadd" data-toggle="modal" data-target="#exampleModal" style="background-color: #4a5da1;color: #FFFFFF;"> <i class="fas fa-plus-circle"></i> Добавить бота </button>
             <% if (user) { %>
               <% if (user.staff) { %>
-            <button type="button" class="botadd" data-toggle="modal" onclick="document.location='/queue'" style="background-color: #66778a;color: #FFFFFF;"> Очередь ботов </button>
+            <button type="button" class="botadd" data-toggle="modal" onclick="document.location='/queue'" style="background-color: #66778a;color: #FFFFFF;"> <i class="fas fa-wrench"></i> Очередь ботов</button>
                 <% } %>
               <% } %>                    
               </li>
