@@ -17,7 +17,7 @@ module.exports = (client) => {
             await client.queue.autoDelete(client, botID, "Бота не сущевствует");
             return res.redirect("/404");
         }
-        const dailyUpvotes = await client.database.Upvotes.get(`${botID}_upvotes_${new Date().toISOString().slice(0, 10)}`) || 0;
+        const dailyUpvotes = await client.database.Upvotes.get(`${botID}_upvotes_${new Date().toISOString().slice(0, 100)}`) || 0;
         res.render("BotVote.ejs", { bot: req.bot, botDB, botInfo: bot, user: (req.user || null), dailyUpvotes });
     });
 
