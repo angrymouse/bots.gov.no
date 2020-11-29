@@ -26,25 +26,6 @@
     </head>
     
     <body>
-        <button onclick="topFunction()" id="myBtn" title="Вверх"><img src="./assets/upload.png" ></img></button>
-        <script>
-            window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-    if (document.body.scrollTop > 1250 || document.documentElement.scrollTop > 1250) {
-        document.getElementById("myBtn").style.display = "block";
-    } else {
-        document.getElementById("myBtn").style.display = "none";
-    }
-}
-
-
-function topFunction() {
-    document.body.scrollTop = 0; 
-    document.documentElement.scrollTop = 0; 
-}
-
-        </script>
         <div class="preloader">
             <div id="preloader">
                 <div id="loader"></div>

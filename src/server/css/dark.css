@@ -482,6 +482,14 @@ h1 {
   padding: 15px; /* Some padding */
   border-radius: 10px; /* Rounded corners */
   font-size: 18px; /* Increase font size */
+  -webkit-transition: .1s ease-out;
+  -webkit-transition-delay: 0.5s;
+  -o-transition: .1s ease-out;
+  -o-transition-delay: 0.5s;
+  -moz-transition: .1s ease-out;
+  -moz-transition-delay: 0.5s;
+  transition: .1s ease-out;
+  transition-delay: 0.5s;
 }
 
 #myBtn:hover {
