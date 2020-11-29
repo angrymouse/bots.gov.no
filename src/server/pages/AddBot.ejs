@@ -20,7 +20,7 @@
                 <div class="form-group required">
                     <label for="botID">ID бота</label>
                     <input type="number" class="form-control" id="botID" placeholder="<%= bot.user.id %>" aria-describedby="botIDhelp" onkeyup="setValidation($(this), checkValid($(this)))" autocomplete="off">
-                    <small id="botIDhelp" class="form-text text-muted">Can be found at <a target="__blank" href="https://discord.com/developers">Discord Developers Page</a></small>
+                    <small id="botIDhelp" class="form-text text-muted">Может быть найден на <a target="__blank" href="https://discord.com/developers">Discord Developers Page</a></small>
                 </div>
                 <div class="form-group required">
                     <label for="botPrefix">Префикс</label>
@@ -40,7 +40,7 @@
                     <label>Предпросмотр</label>
                     <div class="card bg-light mb-3">
                         <div class="card-body">
-                            <div id="botLongDescPreview"></div>
+                            <div id="botLongDescPreview" style="color: azure;" ></div>
                         </div>
                     </div>
                 </div>
@@ -60,42 +60,42 @@
                 <div class="form-group">
                     <label for="botInvite">Приглашение</label>
                     <input type="url" class="form-control" id="botInvite" aria-describedby="botInvitehelp" placeholder="https://discordapp.com/oauth2/authorize?client_id=<%= bot.user.id %>&scope=bot&permissions=8" autocomplete="off">
-                    <small id="botInvitehelp" class="form-text text-muted">Can be generated at <a target="__blank" href="https://discordapi.com/permissions.html">Discord API Permissions</a></small>
+                    <small id="botInvitehelp" class="form-text text-muted">Можно сгенерировать на <a target="__blank" href="https://discordapi.com/permissions.html">Discord API Permissions</a></small>
                 </div>
                 <div class="form-group" id="tags-box">
-                    <label class="mb-0">Bot Tags</label>
+                    <label class="mb-0">Тэги:</label>
                     <small class="form-text text-muted mt-0 mb-2">Максимум 4 тега</small>
                     <div class="custom-control custom-checkbox">
                         <input type="checkbox" class="custom-control-input" id="tag-moderation" value="moderation" name="tag">
-                        <label class="custom-control-label" for="tag-moderation">Moderation</label>
+                        <label class="custom-control-label" for="tag-moderation">Модерация</label>
                     </div>
                     <div class="custom-control custom-checkbox">
                         <input type="checkbox" class="custom-control-input" id="tag-fun" value="fun" name="tag">
-                        <label class="custom-control-label" for="tag-fun">Fun</label>
+                        <label class="custom-control-label" for="tag-fun">Веселье</label>
                     </div>
                     <div class="custom-control custom-checkbox">
                         <input type="checkbox" class="custom-control-input" id="tag-economy" value="economy" name="tag">
-                        <label class="custom-control-label" for="tag-economy">Economy</label>
+                        <label class="custom-control-label" for="tag-economy">Экономика</label>
                     </div>
                     <div class="custom-control custom-checkbox">
                         <input type="checkbox" class="custom-control-input" id="tag-leveling" value="leveling" name="tag">
-                        <label class="custom-control-label" for="tag-leveling">Leveling</label>
+                        <label class="custom-control-label" for="tag-leveling">Система уровней</label>
                     </div>
                     <div class="custom-control custom-checkbox">
                         <input type="checkbox" class="custom-control-input" id="tag-utility" value="utility" name="tag">
-                        <label class="custom-control-label" for="tag-utility">Utility</label>
+                        <label class="custom-control-label" for="tag-utility">Утилиты</label>
                     </div>
                     <div class="custom-control custom-checkbox">
                         <input type="checkbox" class="custom-control-input" id="tag-anime" value="anime" name="tag">
-                        <label class="custom-control-label" for="tag-anime">Anime</label>
+                        <label class="custom-control-label" for="tag-anime">Аниме</label>
                     </div>
                     <div class="custom-control custom-checkbox">
                         <input type="checkbox" class="custom-control-input" id="tag-meme" value="meme" name="tag">
-                        <label class="custom-control-label" for="tag-meme">Meme</label>
+                        <label class="custom-control-label" for="tag-meme">Мемы</label>
                     </div>
                     <div class="custom-control custom-checkbox">
                         <input type="checkbox" class="custom-control-input" id="tag-music" value="music" name="tag">
-                        <label class="custom-control-label" for="tag-music">Music</label>
+                        <label class="custom-control-label" for="tag-music">Музыка</label>
                     </div>
                 </div>
                 <div class="alert alert-dismissible alert-danger" id="form-error-popup" style="display: none;"></div>
