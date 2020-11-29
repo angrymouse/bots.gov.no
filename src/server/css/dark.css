@@ -483,17 +483,59 @@ h1 {
   border-radius: 10px; /* Rounded corners */
   font-size: 18px; /* Increase font size */
   -webkit-transition: .1s ease-out;
-  -webkit-transition-delay: 0.5s;
+  -webkit-transition-delay: 1s;
   -o-transition: .1s ease-out;
-  -o-transition-delay: 0.5s;
+  -o-transition-delay: 1s;
   -moz-transition: .1s ease-out;
-  -moz-transition-delay: 0.5s;
+  -moz-transition-delay: 1s;
   transition: .1s ease-out;
-  transition-delay: 0.5s;
+  transition-delay: 1s;
 }
 
 #myBtn:hover {
   background-color: #555; /* Add a dark-grey background on hover */
+}
+#myBtn {
+border: none;
+color: rgb(0, 217, 255);
+padding: 10px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
+cursor: pointer;
+transition: all 500ms ease; 
+    }
+    #myBtn:hover {
+background: #ffffff;
+color: #ffffff;
+}
+#myBtn:hover::before {
+  width: 100%;
+}
+#myBtn::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 25%;
+  width: 0;
+  height: 6px;
+  background-color: #262626;
+  transition: .5s;
+  transition-delay: .5s;
+}
+#myBtn:hover::after {
+  width: 50%;
+}  
+#myBtn span {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+  width: 50%;
+  height: 6px;
+  background-color: #fff;
 }
 /* scrollbar */
 body::-webkit-scrollbar {
