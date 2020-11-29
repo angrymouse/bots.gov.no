@@ -423,7 +423,7 @@ h1 {
     }
     .parallax > use:nth-child(3) {
     animation-delay: -4s;
-    animation-duration: 3s;
+    animation-duration: 6s;
     }
     
     @keyframes move-forever {
