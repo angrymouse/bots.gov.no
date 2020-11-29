@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XC59BH0KTK"></script>
 <script>
@@ -16,22 +16,35 @@
 </head>
 <body>
     <%- include("./components/navbar.ejs", { bot, user }) %>
-
-    <div class="container">
-        <div class="jumbotron" style="background-color: #2C2F33;border-radius: 10px;">
-            <h2 class="" style="color: azure;text-align: center;"><strong>TopBots</strong></h2>
-            <p style="color: azure;text-align: center;">Лучшие Discord боты в одном месте</p>
-            <div style="padding-left: 350px;" class="form-inline my-2 my-lg-0">
-                <input id="search-box" class="form-control" type="text" style="opacity: .5;border-radius: 10px;padding-right: 20%;" placeholder="у меня на локал хосте все нормально.(c) d1m0s23 2020" autocomplete="off">
-                <button id="search-btn" class="btn btn-light my-2 my-sm-0"  style="background-color: #ffffff;border-radius: 10px;color: black;" type="button">Поиск</button>
-            </div>
         </div>
         <br>
-        <div class="bots-box">
-            <h4>Боты</h4>	
+        <h2 style="text-align: center;" >Поиск</h2>	
             <% if (search) { %>
-                <p style="color: white;" >Результаты поиска <strong><%= search %></strong></p>
+                <p style="color: white;text-align: center;font-size: 150%;" >Результаты поиска <strong><%= search %></strong></p>
             <% } %>
+        <svg style="height: 100%;" class="editorial"
+ xmlns="http://www.w3.org/2000/svg"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ viewBox="0 24 150 28"
+ preserveAspectRatio="none">
+<defs>
+<path id="gentle-wave"
+d="M-160 44c30 0 
+58-18 88-18s
+58 18 88 18 
+58-18 88-18 
+58 18 88 18
+v44h-352z" />
+</defs>
+<g class="parallax">
+<use  xlink:href="#gentle-wave" x="60" y="0" fill="#4a5da1"/>
+<use xlink:href="#gentle-wave" x="60" y="3" fill="#23272A"/>
+<use xlink:href="#gentle-wave" x="60" y="6" fill="#2C2F33"/>  
+</g>
+</svg>                  
+<div class="content">
+    <div class="container">
+        <div class="bots-box">
             <% for(let i = 0; i < bots.length; i++) { %>
                 <div class="row">
                     <% for(let j = 0; j < bots[i].length; j++) { %>
@@ -101,6 +114,7 @@
             <% } %>
         </div>
     </div>
+</div>
     <%- include("./components/footer.ejs") %> 
 </body>
 
