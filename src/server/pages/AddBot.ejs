@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>
+        function onSubmit(6LdnP_IZAAAAAMMfBjwIS2fAOhNV3FGpt_jyyl13) {
+          document.getElementById("form").submit();
+        }
+      </script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TopBots</title>
+    <title>Добавление бота | TopBots</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/1.1.0/marked.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sanitize-html/1.26.0/sanitize-html.min.js"></script>
     <%- include("./components/header.ejs") %>
@@ -52,7 +58,7 @@
                     <label for="botSupport">Сервер поддержки</label>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
-                          <span class="input-group-text">https://discord.gg/</span>
+                          <span class="input-group-text">Например: https://discord.gg/gQRMTest9U</span>
                         </div>
                         <input type="text" class="form-control" id="botSupport" placeholder="8KV5zCg" autocomplete="off">
                     </div>
@@ -100,7 +106,9 @@
                 </div>
                 <div class="alert alert-dismissible alert-danger" id="form-error-popup" style="display: none;"></div>
                 <p style="color: #555;">Нажимая на кнопку, ты подтверждаешь что ты согласен в DiscordTOS.</p>
-                <button type="submit" class="btn btn-primary">Отправить</button>
+                <button type="submit" class="btn btn-primary" data-sitekey="reCAPTCHA_site_key" 
+                data-callback='onSubmit' 
+                data-action='submit' >Отправить</button>
             </form>
         </div>
         <br><br>
