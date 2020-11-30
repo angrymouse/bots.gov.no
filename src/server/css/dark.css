@@ -134,7 +134,6 @@ transform: rotate(360deg);
  /* footer */
    @import url('https://fonts.googleapis.com/css2?family=Goldman&display=swap');
     .footer{
-        background-image: url(./server/assets/fons-2.png);
         height: 400px;
         position: sticky;
         text-align: center;
