@@ -9,14 +9,6 @@
 </head>
 <body>
     <%- include("./components/navbar.ejs", { bot, user }) %>
-
-    <div class="container">
-            <h2 style="color: #ffffff;"><strong>Очередь</strong></h2>
-            <p class="lead" style="color: #ffffff;">Все боты которые ожидают проверки тут.</p>
-            <!-- <hr class="my-4">
-            <p class="lead">
-              <a class="btn btn-primary btn-lg" href="https://discordapp.com/channels/480939855476686849/<%= bot.config.channels.logs %>" role="button">Logs</a>
-            </p> -->
     <svg style="height: 100%;" class="editorial"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -38,6 +30,13 @@
        </g>
        </svg>                  
        <div class="content">
+    <div class="container">
+            <h2 style="color: #ffffff;"><strong>Очередь</strong></h2>
+            <p class="lead" style="color: #ffffff;">Все боты которые ожидают проверки тут.</p>
+            <!-- <hr class="my-4">
+            <p class="lead">
+              <a class="btn btn-primary btn-lg" href="https://discordapp.com/channels/480939855476686849/<%= bot.config.channels.logs %>" role="button">Logs</a>
+            </p> -->
         <div class="bots-list">
             <br>
             <h5>Ждут проверки</h5>
