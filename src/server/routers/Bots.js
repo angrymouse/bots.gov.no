@@ -27,7 +27,7 @@ module.exports = (client) => {
         if(!botDB || !botDB.dataValues) return res.json({ ok: false, message: "NO_SUCH_BOT", reason: "Бот не найден!" });
         const OneHour = 60 * 60 * 1000;
         const TwentyFourHour = 24 * OneHour;
-        const ISO = new Date().toISOString().slice(0, 10);
+        const ISO = new Date().toISOString().slice(0, 1000);
         const BotUserKey = `${botID}_${req.user.id}_upvotes_${ISO}`;
         const BotKey = `${botID}_upvotes_${ISO}`;
         const lastUpvote = await client.database.Upvotes.get(BotUserKey) || null;
