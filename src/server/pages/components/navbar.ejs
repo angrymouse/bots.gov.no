@@ -1,11 +1,8 @@
 <nav style="background-color: #FFFFFF;" class="navbar navbar-expand-lg navbar-dark bg-dark">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XC59BH0KTK"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
-    <a class="navbar-brand" href="/"><img src="/assets/logo.png" style="height: 50px; width: 50px;border-radius: 0 15px"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>  
-    <div class="collapse navbar-collapse" id="navbarColor02">
+    <a class="navbar-brand" href="/"><img src="/assets/logo.png" style="height: 50px; width: 50px;border-radius: 0 15px"></a> 
+    <div class="collapse navbar-collapse" id="navbarColor02"></div>
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
         <!-- <button class="themebutton" onClick="toggleTheme('dark')"> <img alt="" src="/assets/button.png" width="28" height="28" style="vertical-align:middle" /></button> -->
@@ -13,8 +10,11 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <li class="nav-item">
+           <% if (user) { %>
             <div class="button-add">
             <button type="button" class="botadd" data-toggle="modal" data-target="#exampleModal" style="background-color: #4a5da1;color: #FFFFFF;"> <i class="fas fa-plus-circle"></i> Добавить бота </button>
+            </div>
+          <% } %>
             <% if (user) { %>
 		
 <% if(user.id == '578936810936467459' || user.id == '343046183088029696' || user.id == '585766846268047370' || user.id == '501089151089770517' || user.id == '622747295435456512') { %>
@@ -37,7 +37,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" style="color: #ffffff;"  id="exampleModalLabel">Добавить бота</h5>
+        <h5 class="modal-title" style="color: #ffffff;float: left;"  id="exampleModalLabel">Добавить бота</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -60,7 +60,7 @@
                                   </script>
                                 <% } else { %>
                                     <% } %>   
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown" style="float: right;" >
                     <a class="nav-link dropdown-toggle btn btn-primary pl-3 pr-3 mr-3" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="background-color: #4a5da1;color: #FFFFFF;border-radius: 10px;"><img class="card-img-top" src="https://cdn.discordapp.com/avatars/<%= user.id %>/<%= user.avatar %>.png?size=1280" alt="<%= user.tag %>" style="height: 40px; width: 40px; border-radius: 50%;padding-right: 5px;"><%= user.username %>#<%= user.discriminator %></a>
                         <div class="dropdown-menu">
                         <a class="dropdown-item" style="background-color: #FFFFFF;color: black;"  href="/me">Профиль</a>

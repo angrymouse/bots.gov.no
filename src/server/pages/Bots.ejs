@@ -18,10 +18,12 @@
     <%- include("./components/navbar.ejs", { bot, user }) %>
         </div>
         <br>
-        <h2 style="text-align: center;" >Поиск</h2>	
+    <div class="searchtitle" >
+        <h2 style="text-align: center;" class="searchtitle2" >Поиск</h2>	
             <% if (search) { %>
-                <p style="color: white;text-align: center;font-size: 150%;" >Результаты поиска <strong><%= search %></strong></p>
+                <p style="text-align: center;font-size: 150%;" >Результаты поиска <strong><%= search %></strong></p>
             <% } %>
+    </div>
         <svg style="height: 100%;" class="editorial"
  xmlns="http://www.w3.org/2000/svg"
  xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -37,9 +39,9 @@ d="M-160 44c30 0
 v44h-352z" />
 </defs>
 <g class="parallax">
-<use  xlink:href="#gentle-wave" x="60" y="0" fill="#4a5da1"/>
-<use xlink:href="#gentle-wave" x="60" y="3" fill="#23272A"/>
-<use xlink:href="#gentle-wave" x="60" y="6" fill="#2C2F33"/>  
+    <use  xlink:href="#gentle-wave" x="75" y="0" class="wave"/>
+    <use xlink:href="#gentle-wave" x="75" y="3" class="wave2"/>
+    <use xlink:href="#gentle-wave" x="75" y="6" class="wave3"/>  
 </g>
 </svg>                  
 <div class="content">
