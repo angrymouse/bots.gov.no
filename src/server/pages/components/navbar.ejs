@@ -15,12 +15,12 @@
             <button type="button" class="botadd" data-toggle="modal" data-target="#exampleModal" style="background-color: #4a5da1;color: #FFFFFF;"> <i class="fas fa-plus-circle"></i> Добавить бота </button>
             </div>
           <% } %>
+          <% if (user.staff) { %>
+            <button type="button" class="botadd" data-toggle="modal" onclick="document.location='/queue'" style="background-color: #66778a;color: #FFFFFF;"> <i class="fas fa-wrench"></i> Очередь ботов</button>
+                <% } %>
           <div class="dropdown" style="float:right;">
             <button type="button" class="botadd" style="background-color: #4a5da1;color: #FFFFFF;"> <i class="fas fa-wrench"></i> Панель управления </button>
             <div class="dropdown-content">
-              <% if (user.staff) { %>
-                <button type="button" class="botadd" data-toggle="modal" onclick="document.location='/queue'" style="background-color: #66778a;color: #FFFFFF;"> <i class="fas fa-wrench"></i> Очередь ботов</button>
-                    <% } %>
             </div>
           </div>
             <% if (user) { %>
@@ -67,7 +67,7 @@
                                     <% } %>   
                 <li class="nav-item dropdown" style="float: right;" >
                     <a class="nav-link dropdown-toggle btn btn-primary pl-3 pr-3 mr-3" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="background-color: #4a5da1;color: #FFFFFF;border-radius: 10px;"><img class="card-img-top" src="https://cdn.discordapp.com/avatars/<%= user.id %>/<%= user.avatar %>.png?size=1280" alt="<%= user.tag %>" style="height: 40px; width: 40px; border-radius: 50%;padding-right: 5px;"><%= user.username %>#<%= user.discriminator %></a>
-                        <div class="dropdown-menu" style="border-radius: 10px;background-color: none;">
+                        <div class="dropdown-menu">
                         <a class="dropdown-item" style="background-color: #FFFFFF;color: black;"  href="/me">Профиль</a>
                         <a class="dropdown-item" href="/logout">Выйти</a>
                         <% if (user.staff) { %>
