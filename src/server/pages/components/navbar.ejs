@@ -15,10 +15,12 @@
             <button type="button" class="botadd" data-toggle="modal" data-target="#exampleModal" style="background-color: #4a5da1;color: #FFFFFF;"> <i class="fas fa-plus-circle"></i> Добавить бота </button>
             </div>
           <% } %>
+          <% if (user.staff) { %>
           <div class="dropdown" style="float:right;">
             <button type="button" class="botadd" style="background-color: #4a5da1;color: #FFFFFF;"> <i class="fas fa-wrench"></i> Панель управления </button>
             <div class="dropdown-content">
             </div>
+          <% } %>
           </div>
             <% if (user) { %>
 		
