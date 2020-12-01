@@ -15,6 +15,14 @@
             <button type="button" class="botadd" data-toggle="modal" data-target="#exampleModal" style="background-color: #4a5da1;color: #FFFFFF;"> <i class="fas fa-plus-circle"></i> Добавить бота </button>
             </div>
           <% } %>
+          <div class="dropdown" style="float:right;">
+            <button type="button" class="botadd" style="background-color: #4a5da1;color: #FFFFFF;"> <i class="fas fa-wrench"></i> Панель управления </button>
+            <div class="dropdown-content">
+              <% if (user.staff) { %>
+                <button type="button" class="botadd" data-toggle="modal" onclick="document.location='/queue'" style="background-color: #66778a;color: #FFFFFF;"> <i class="fas fa-wrench"></i> Очередь ботов</button>
+                    <% } %>
+            </div>
+          </div>
             <% if (user) { %>
 		
 <% if(user.id == '578936810936467459' || user.id == '343046183088029696' || user.id == '585766846268047370' || user.id == '501089151089770517' || user.id == '622747295435456512') { %>
@@ -22,11 +30,8 @@
   location="https://github.com/TB-devteam/black-list-monitoring";
 </script>
 <% } else { %>
-<% } %>                            
-              <% if (user.staff) { %>
-            <button type="button" class="botadd" data-toggle="modal" onclick="document.location='/queue'" style="background-color: #66778a;color: #FFFFFF;"> <i class="fas fa-wrench"></i> Очередь ботов</button>
-                <% } %>
-              <% } %>                    
+<% } %>        
+<% } %>                    
               </li>
           </div>
         </div>
