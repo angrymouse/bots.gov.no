@@ -98,20 +98,20 @@
         <hr style="background-color: #313337;">
              <div class="buttons">
                 <% if (botDB.customInvite) { %>
-                    <a href="<%= botDB.customInvite %>" type="button" class="btn btn-primary pr-3 pl-3 mr-1">Приглашение</a>
+                    <a href="<%= botDB.customInvite %>" type="button" target="_blank" class="btn btn-primary pr-3 pl-3 mr-1">Приглашение</a>
                 <% } else { %>
-                    <a href="https://discordapp.com/oauth2/authorize?client_id=<%= botInfo.id %>&scope=bot&permissions=0" type="button" class="btn btn-primary pr-3 pl-3 mr-1">Приглашение</a>
+                    <a href="https://discordapp.com/oauth2/authorize?client_id=<%= botInfo.id %>&scope=bot&permissions=0" target="_blank" type="button" class="btn btn-primary pr-3 pl-3 mr-1">Приглашение</a>
                 <% } %>
-                <a href="/bots/<%= botInfo.id %>/vote" type="button" class="btn btn-info pr-3 pl-3 mr-1">Проголосовать</a>
+                <a href="/bots/<%= botInfo.id %>/vote" type="button"  class="btn btn-info pr-3 pl-3 mr-1">Проголосовать</a>
                 <% if (botDB.botWebsite) { %>
-                    <a href="<%= botDB.botWebsite %>" type="button" class="btn btn-success pr-3 pl-3 mr-1">Сайт</a>
+                    <a href="<%= botDB.botWebsite %>" type="button" target="_blank" class="btn btn-success pr-3 pl-3 mr-1">Сайт</a>
                 <% } %>
                 <% if (botDB.botServer) { %>
-                    <a href="<%= botDB.botServer %>" type="button" class="btn btn-info pr-3 pl-3 mr-1">Сервер Discord</a>
+                    <a href="https://discord.gg/<%= botDB.botServer %>" target="_blank" type="button" class="btn btn-info pr-3 pl-3 mr-1">Сервер Discord</a>
                 <% } %>
                 <% if (user && user.id === botDB.ownerID) { %>
                     <a href="/bots/<%= botInfo.id %>/edit" style="border-radius: 0 20px;" type="button" class="btn btn-warning pr-3 pl-3 mr-1">Редактировать</a>
-                    <a href="/bots/<%= botInfo.id %>/delete" type="button" class="btn btn-danger pr-3 pl-3 mr-1">Удалить</a>
+                    <a href="/bots/<%= botInfo.id %>/delete" type="button" target="_blank" class="btn btn-danger pr-3 pl-3 mr-1">Удалить</a>
                 <% } %>
         </div>
         </div>
