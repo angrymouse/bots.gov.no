@@ -60,7 +60,7 @@
                                 <% } else { %>
                                     <% } %>   
                 <li class="nav-item dropdown" style="float: right;" >
-                    <a class="nav-link dropdown-toggle btn btn-primary pl-3 pr-3 mr-3" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="background-color: #4a5da1;color: #FFFFFF;border-radius: 10px;"><img class="card-img-top" src="https://cdn.discordapp.com/avatars/<%= user.id %>/<%= user.avatar %>.png?size=1280" alt="<%= user.tag %>" style="height: 40px; width: 40px; border-radius: 50%;padding-right: 5px;"><%= user.username %>#<%= user.discriminator %></a>
+                    <a class="nav-link dropdown-toggle btn btn-primary pl-3 pr-3 mr-3" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color: #FFFFFF;border-radius: 10px;"><img class="card-img-top" src="https://cdn.discordapp.com/avatars/<%= user.id %>/<%= user.avatar %>.png?size=1280" alt="<%= user.tag %>" style="height: 40px; width: 40px; border-radius: 50%;padding-right: 5px;"><%= user.username %>#<%= user.discriminator %></a>
                         <div class="dropdown-menu" style="border-radius: 10px;" >
                         <a class="dropdown-item" style="background-color: #FFFFFF;color: black;border-radius: 10px;"  href="/me">Профиль</a>
                         <a class="dropdown-item" style="border-radius: 10px;" href="/logout">Выйти</a>
