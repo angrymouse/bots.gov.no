@@ -15,11 +15,11 @@
         <div class="jumbotron">
             <h2>Добавить бота</h2>
         </div>
-        <div class="form" >
+        <div class="form">
             <form action="/bots/add/submit" method="POST" onsubmit="return validateForm()">
                 <div class="form-group required">
                     <label for="botID">ID бота</label>
-                    <input style="border-color: black;" type="number" class="form-control" id="botID" placeholder="<%= bot.user.id %>" aria-describedby="botIDhelp" onkeyup="setValidation($(this), checkValid($(this)))" autocomplete="off">
+                    <input type="number" class="form-control" id="botID" placeholder="<%= bot.user.id %>" aria-describedby="botIDhelp" onkeyup="setValidation($(this), checkValid($(this)))" autocomplete="off">
                     <small id="botIDhelp" class="form-text text-muted">Может быть найден на <a target="__blank" href="https://discord.com/developers">Discord Developers Page</a></small>
                 </div>
                 <div class="form-group required">
