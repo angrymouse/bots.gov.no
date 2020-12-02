@@ -58,7 +58,7 @@ module.exports = (client) => new Promise((resolve) => {
             if(Bot) {
                 bot.tag = `${Bot.username}`;
                 bot.avatar = Bot.avatar;
-                bot.upvotes = client.database.Upvotes.get(`${bot.botID}_upvotes_${new Date().toISOString().slice(0, 10)}`) || 0;
+                bot.upvotes = client.database.Upvotes.get(`${bot.botID}_upvotes_${new Date().toISOString().slice(0, 99)}`);
                 Bots.push(bot);
             }
         });
