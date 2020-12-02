@@ -10,7 +10,7 @@
 </head>
 <body>
     <%- include("./components/navbar.ejs", { bot, user }) %>
-    <div style="text-align: center;" >
+    <div style="justify-content: center" >
         <h2>Редактировать</h2>
         <p>Вы редактируете <strong><%= botInfo.username %>#<%= botInfo.discriminator %></strong></p>
         <a href="/bots/<%= botInfo.id %>/delete" type="button" class="btn btn-danger">Удалить бота</a>
@@ -36,7 +36,7 @@
    </g>
    </svg>                  
    <div class="content">
-    <div class="container" style="justify-content: center;text-align: center;" >
+    <div class="container" style="justify-content: center;" >
         <div class="alert alert-dismissible alert-success" id="success-save" style="display: none;">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
             <strong>Хммм, все сохранилось :klass:</strong>
