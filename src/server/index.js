@@ -48,9 +48,7 @@ module.exports = (client) => new Promise((resolve) => {
     app.get("/", async (req, res) => {
         const FetchedBots = await client.database.Bots.findAll({
             where: { isApproved: true },
-            order: [
-                ['totalUpvotes', 'DESC'],
-            ],
+            order: '"totalUpvotes" DESC'
         }) || [];
         const Bots = [];
         FetchedBots.map(bot => bot.dataValues).forEach(bot => {
