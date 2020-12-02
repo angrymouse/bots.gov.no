@@ -19,16 +19,16 @@
             <form action="/bots/add/submit" method="POST" onsubmit="return validateForm()">
                 <div class="form-group required">
                     <label for="botID">ID бота</label>
-                    <input type="number" class="form-control" id="botID" placeholder="<%= bot.user.id %>" aria-describedby="botIDhelp" onkeyup="setValidation($(this), checkValid($(this)))" autocomplete="off">
+                    <input style="border-color: black;" type="number" class="form-control" id="botID" placeholder="<%= bot.user.id %>" aria-describedby="botIDhelp" onkeyup="setValidation($(this), checkValid($(this)))" autocomplete="off">
                     <small id="botIDhelp" class="form-text text-muted">Может быть найден на <a target="__blank" href="https://discord.com/developers">Discord Developers Page</a></small>
                 </div>
                 <div class="form-group required">
                     <label for="botPrefix">Префикс</label>
-                    <input type="text" class="form-control" id="botPrefix" placeholder="<%= bot.config.prefix %>" onkeyup="setValidation($(this), checkValid($(this)))" autocomplete="off">
+                    <input style="border-color: black;" type="text" class="form-control" id="botPrefix" placeholder="<%= bot.config.prefix %>" onkeyup="setValidation($(this), checkValid($(this)))" autocomplete="off">
                 </div>
                 <div class="form-group required">
                     <label for="botShortDesc">Краткое описание</label>
-                    <input type="text" class="form-control" id="botShortDesc" aria-describedby="botShortDeschelp" placeholder="Привет!Мой бот умеет ничего))0" onkeyup="setValidation($(this), checkValid($(this), 'char_100'))" autocomplete="off">
+                    <input style="border-color: black;" type="text" class="form-control" id="botShortDesc" aria-describedby="botShortDeschelp" placeholder="Привет!Мой бот умеет ничего))0" onkeyup="setValidation($(this), checkValid($(this), 'char_100'))" autocomplete="off">
                     <small id="botShortDeschelp" class="form-text text-muted">Минимум 20 сим., максимум 40</small>
                 </div>
                 <div class="form-group required">
@@ -46,7 +46,7 @@
                 </div>
                 <div class="form-group">
                     <label for="botWebsite">Сайт</label>
-                    <input type="url" class="form-control" id="botWebsite" placeholder="Например: https://elemelkya.xyz , https://yuycraft.ga/" autocomplete="off">
+                    <input style="border-color: black;" type="url" class="form-control" id="botWebsite" placeholder="Например: https://elemelkya.xyz , https://yuycraft.ga/" autocomplete="off">
                 </div>
                 <div class="form-group">
                     <label for="botSupport">Сервер поддержки</label>
@@ -54,12 +54,12 @@
                         <div class="input-group-prepend">
                           <span class="input-group-text">gQRMTest9U</span>
                         </div>
-                        <input type="text" class="form-control" id="botSupport" placeholder="8KV5zCg" autocomplete="off">
+                        <input style="border-color: black;" type="text" class="form-control" id="botSupport" placeholder="8KV5zCg" autocomplete="off">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="botInvite">Приглашение</label>
-                    <input type="url" class="form-control" id="botInvite" aria-describedby="botInvitehelp" placeholder="https://discordapp.com/oauth2/authorize?client_id=<%= bot.user.id %>&scope=bot&permissions=8" autocomplete="off">
+                    <input style="border-color: black;" type="url" class="form-control" id="botInvite" aria-describedby="botInvitehelp" placeholder="https://discordapp.com/oauth2/authorize?client_id=<%= bot.user.id %>&scope=bot&permissions=8" autocomplete="off">
                     <small id="botInvitehelp" class="form-text text-muted">Можно сгенерировать на <a target="__blank" href="https://discordapi.com/permissions.html">Discord API Permissions</a></small>
                 </div>
                 <div class="form-group" id="tags-box">
