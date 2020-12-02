@@ -74,6 +74,14 @@
                             <p style="text-align: center;" ><i class="fas fa-wrench" style="text-align: center;border-radius: 10px;"></i>Админская</p>
                             <a class="dropdown-item" style="border-radius: 10px;" href="/queue"><i class="fas fa-wrench" style="text-align: center;border-radius: 10px;"></i>Очередь</a>
                         <% } %>
+                        <div class="dropdown-divider"></div>
+                        <p style="text-align: center;" ><img src="http://s1.iconbird.com/ico/0912/IconBeastLite/w30h301347459222speakerelectric.png" height="20px" width="20px" ></img>Сервера</p>
+                        <a href="https://discord.gg/gQRMTest9U" class="dropdown-item" >TopBots</a>
+                        <% if (user.staff) { %>
+                        <a href="https://discord.gg/ghy2rxRNCr" class="dropdown-item" >TopBots/Queue</a>
+                        <a href="https://discord.gg/p9NQa6ddtj" class="dropdown-item" >TopBots Development</a>
+                        <% } %>
+                        
                     </div>
                 </li>
             <% } else { %>
