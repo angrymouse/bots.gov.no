@@ -10,11 +10,31 @@
 </head>
 <body>
     <%- include("./components/navbar.ejs", { bot, user }) %>
-
+    <div style="text-align: center;" >
+        <h2>Добавить бота</h2>
+    </div>
+    <svg style="height: 100%;" class="editorial"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    viewBox="0 24 150 28"
+    preserveAspectRatio="none">
+   <defs>
+   <path id="gentle-wave"
+   d="M-160 44c30 0 
+   58-18 88-18s
+   58 18 88 18 
+   58-18 88-18 
+   58 18 88 18
+   v44h-352z" />
+   </defs>
+   <g class="parallax">
+   <use  xlink:href="#gentle-wave" x="75" y="0" class="wave"/>
+   <use xlink:href="#gentle-wave" x="75" y="3" class="wave2"/>
+   <use xlink:href="#gentle-wave" x="75" y="6" class="wave3"/>  
+   </g>
+   </svg>                  
+   <div class="content">
     <div class="container">
-        <div class="jumbotron">
-            <h2>Добавить бота</h2>
-        </div>
         <div class="form">
             <form action="/bots/add/submit" method="POST" onsubmit="return validateForm()">
                 <div class="form-group required">
