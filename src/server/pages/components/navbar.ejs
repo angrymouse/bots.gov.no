@@ -59,7 +59,7 @@
                                   </script>
                                 <% } else { %>
                                     <% } %>   
-                <li class="nav-item dropdown" style="float: right;" >
+                <li class="nav-item dropdown" style="float: right;border-radius: 10px;" >
                     <a class="nav-link dropdown-toggle btn btn-primary pl-3 pr-3 mr-3" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="background-color: #4a5da1;color: #FFFFFF;border-radius: 10px;"><img class="card-img-top" src="https://cdn.discordapp.com/avatars/<%= user.id %>/<%= user.avatar %>.png?size=1280" alt="<%= user.tag %>" style="height: 40px; width: 40px; border-radius: 50%;padding-right: 5px;"><%= user.username %>#<%= user.discriminator %></a>
                         <div class="dropdown-menu">
                         <a class="dropdown-item" style="background-color: #FFFFFF;color: black;"  href="/me">Профиль</a>
@@ -67,7 +67,7 @@
                         <button type="button" class="botadd" data-toggle="modal" data-target="#exampleModal" style="background-color: #4a5da1;color: #FFFFFF;"> <i class="fas fa-plus-circle"></i> Добавить бота </button>
                         <% if (user.staff) { %>
                             <div class="dropdown-divider"></div>
-                            <p><i class="fas fa-wrench" style="text-align: center;" ></i>Админская</p>
+                            <p><i class="fas fa-wrench" style="text-align: center;"></i>Админская</p>
                             <a class="dropdown-item"  href="/queue">Очередь</a>
                         <% } %>
                     </div>
