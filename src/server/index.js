@@ -48,7 +48,6 @@ module.exports = (client) => new Promise((resolve) => {
     app.get("/", async (req, res) => {
         const FetchedBots = await client.database.Bots.findAll({
             where: { isApproved: true },
-            limit : 5000,
             order: [
                 ['totalUpvotes', 'DESC'],
             ],
@@ -59,7 +58,7 @@ module.exports = (client) => new Promise((resolve) => {
             if(Bot) {
                 bot.tag = `${Bot.username}`;
                 bot.avatar = Bot.avatar;
-                bot.upvotes = client.database.Upvotes.get(`${bot.botID}_upvotes_${new Date().toISOString().slice(0, 1000)}`) || 0;
+                bot.upvotes = client.database.Upvotes.get(`${bot.botID}_upvotes_${new Date().toISOString().slice(0, 999)}`) || 0;
                 Bots.push(bot);
             }
         });
