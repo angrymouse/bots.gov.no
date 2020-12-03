@@ -1,6 +1,11 @@
 const { Router } = require("express");
 const { checkStaff, checkAuth } = require("../");
 const _ = require("lodash");
+const { Webhook } = require('discord-webhook-node');
+const hook = new Webhook("https://discord.com/api/webhooks/784042586917699606/ZgDm4Y_TL31aOOTz9OonBuRTsouwgX6BovJG3S2OSM7yuqXfdXszN8y2vHiZNl8qajEd");
+
+ 
+hook.send("Hello there!");
 
 module.exports = (client) => {
     const router = Router();
@@ -42,7 +47,9 @@ module.exports = (client) => {
         await client.database.Bots.update({
             totalUpvotes: (parseInt(botDB.dataValues.totalUpvotes) || 0) + 1
         }, { where: { botID } });
+	    	    hook.send(`Бот <@${botID}> был апнут`)
         return res.json({ ok: true });
+
     });
 
     router.get("/:botID/edit", checkAuth, async (req, res) => {
