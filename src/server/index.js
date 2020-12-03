@@ -6,6 +6,7 @@ const passport = require("passport");
 const { Strategy } = require("passport-discord").Strategy;
 const _ = require("lodash");
 const axios = require("axios");
+const secretKey = '<SECRETKEY>';
 
 module.exports = (client) => new Promise((resolve) => {
     
