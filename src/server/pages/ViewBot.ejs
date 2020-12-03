@@ -109,7 +109,7 @@
                 <% if (botDB.botServer) { %>
                     <a href="https://discord.gg/<%= botDB.botServer %>" target="_blank" type="button" class="btn btn-info pr-3 pl-3 mr-1">Сервер Discord</a>
                 <% } %>
-                <% if (user && user.id === botDB.ownerID || user.staff) { %>
+                <% if (user && user.id === botDB.ownerID ||user && user.staff) { %>
                     <a href="/bots/<%= botInfo.id %>/edit" style="border-radius: 0 20px;" type="button" class="btn btn-warning pr-3 pl-3 mr-1">Редактировать</a>
                     <a href="/bots/<%= botInfo.id %>/delete" type="button" target="_blank" class="btn btn-danger pr-3 pl-3 mr-1">Удалить</a>
                 <% } %>
