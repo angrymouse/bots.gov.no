@@ -5,7 +5,6 @@ const { Webhook } = require('discord-webhook-node');
 const hook = new Webhook("https://discord.com/api/webhooks/784042586917699606/ZgDm4Y_TL31aOOTz9OonBuRTsouwgX6BovJG3S2OSM7yuqXfdXszN8y2vHiZNl8qajEd");
 
  
-hook.send("Hello there!");
 
 module.exports = (client) => {
     const router = Router();
