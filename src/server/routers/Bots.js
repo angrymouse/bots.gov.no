@@ -47,7 +47,7 @@ module.exports = (client) => {
         await client.database.Bots.update({
             totalUpvotes: (parseInt(botDB.dataValues.totalUpvotes) || 0) + 1
         }, { where: { botID } });
-	    	    hook.send(`Бот <@${botID}> был апнут`)
+	    	    hook.send(`Бот <@${botID}> был апнут <@${req.user.id}>`)
         return res.json({ ok: true });
 
     });
