@@ -139,7 +139,6 @@ module.exports = (client) => {
     router.get("/", async (req, res) => {
         const result = await req.bot.database.Bots.findAll({
             where: { isApproved: true, },
-            limit : 5000,
             order: [
                 ['totalUpvotes', 'DESC'],
             ],
