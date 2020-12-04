@@ -1,0 +1,114 @@
+<nav style="background-color: #FFFFFF;" class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XC59BH0KTK"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
+    <a class="navbar-brand" href="/"><img src="/assets/logo.png" style="height: 50px; width: 50px;border-radius: 0 15px"></a> 
+    <div class="collapse navbar-collapse" id="navbarColor02"></div>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+        <!-- <button class="themebutton" onClick="toggleTheme('dark')"> <img alt="" src="/assets/button.png" width="28" height="28" style="vertical-align:middle" /></button> -->
+        </li>
+        </ul>
+  <!--    
+        <div class="dropdown">
+          <button type="button" class="botadd" style="background-color: #4a5da1;color: #FFFFFF;"> <i class="fas fa-wrench"></i>Панель Управления</button>
+          <div class="dropdown-child">
+            <a href="http://www.вашдомен.ru/page1.html">Подраздел 1</a>
+            <a href="http://www.вашдомен.ru/page2.html">Подраздел 2</a>
+          </div>
+-->
+        <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item">
+            <% if (user) { %>
+		
+<% if(user.id == '578936810936467459' || user.id == '343046183088029696' || user.id == '585766846268047370' || user.id == '501089151089770517' || user.id == '622747295435456512') { %>
+    <script type="text/javascript">
+  location="https://github.com/TB-devteam/black-list-monitoring";
+</script>
+<% } %>        
+<% } %>                    
+              </li>
+          </div>
+        </div>
+
+    
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" style="color: #ffffff;float: left;"  id="exampleModalLabel">Добавить бота</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Нажимая на кнопку "Добавить" вы соглашаетесь с тем что вы автоматический будете добавленый на сервер поддержки
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+        <button  class="btn btn-primary" onclick="document.location='/bots/add'" >Добавить</button>
+      </div>
+    </div>
+  </div>
+</div>
+          
+            <% if (user) { %>
+		<% if (user.id == '578936810936467459' || user.id == '585766846268047370') { %>
+			                                <script>
+                                    document.location='https://github.com/TB-devteam'
+                                  </script>
+                                <% } else { %>
+                                    <% } %>   
+                <li class="nav-item dropdown" style="float: right;" >
+                    <a class="nav-link dropdown-toggle btn btn-primary pl-3 pr-3 mr-3" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="background-color: #4a5da1;color: #FFFFFF;border-radius: 10px;"><img class="card-img-top" src="https://cdn.discordapp.com/avatars/<%= user.id %>/<%= user.avatar %>.png?size=1280" alt="<%= user.tag %>" style="height: 40px; width: 40px; border-radius: 50%;padding-right: 5px;"><%= user.username %>#<%= user.discriminator %></a>
+                        <div class="dropdown-menu" style="border-radius: 10px;position: absolute;" >
+                        <a class="dropdown-item" style="background-color: #FFFFFF;color: black;border-radius: 10px;"  href="/me"> Профиль</a>
+                        <a class="dropdown-item" style="border-radius: 10px;" href="/logout">Выйти</a>
+                        <button type="button" class="botadd" data-toggle="modal" data-target="#exampleModal" style="color: #FFFFFF;border-radius: 10px;"> <i class="fas fa-plus-circle"></i > Добавить бота </button>
+                        <div class="dropdown-divider"></div>
+                        <p style="text-align: center;" ><i class="fas fa-wrench" style="text-align: center;border-radius: 10px;"></i>Темы</p>
+                        <a type="button" class="dropdown-item" onclick="toggleTheme('white');" style="color: #FFFFFF;border-radius: 10px;"><img src="https://cdn.icon-icons.com/icons2/930/PNG/512/sun_icon-icons.com_72269.png" height="20px" width="20px" style="background-color: white;border-radius: 5px;" ></img>Белая тема</a>
+                        <a type="button" class="dropdown-item" onclick="toggleTheme('black');" style="color: #FFFFFF;border-radius: 10px;"><img src="https://image.flaticon.com/icons/png/512/121/121786.png" style="border-radius: 5px;background-color: white;" width="20px" height="20px" ></img>Темная тема</a>
+                        <% if (user.staff) { %>
+                            <div class="dropdown-divider"></div>
+                            <p style="text-align: center;" ><i class="fas fa-wrench" style="text-align: center;border-radius: 10px;"> </i> Админ-параметры</p>
+                            <a class="dropdown-item" style="border-radius: 10px;" href="/queue"><i class="fas fa-wrench" style="text-align: center;border-radius: 10px;"></i>Очередь</a>
+                        <% } %>
+                        <div class="dropdown-divider"></div>
+                        <p style="text-align: center;" ><img src="http://s1.iconbird.com/ico/0912/IconBeastLite/w30h301347459222speakerelectric.png" height="20px" width="20px" ></img>Сервера</p>
+                        <a href="https://discord.gg/gQRMTest9U" class="dropdown-item" >TopBots</a>
+                        <% if (user.staff) { %>
+                        <a href="https://discord.gg/ghy2rxRNCr" class="dropdown-item" >TopBots/Queue</a>
+                        <a href="https://discord.gg/p9NQa6ddtj" class="dropdown-item" >TopBots Development</a>
+                        <% } %>
+                        
+                    </div>
+                </li>
+            <% } else { %>
+                <li class="nav-item">
+                    <a href="/login" style="background-color: #4a5da1;color: #FFFFFF;border-radius: 10px;"  class="btn btn-primary pl-3 pr-3 mr-3">Войти</a>
+                </li>
+            <% } %>
+        </ul>
+    </div>
+</nav>
+
+<script>
+$(function (params) {
+    const searchBtn = $("#search-btn");
+    searchBtn.click(function (event) {
+        event.preventDefault();
+        const searchBox = $("#search-box");
+        const searchTerm = searchBox.val();
+        if(searchTerm) {
+            searchBtn.addClass("disabled");
+            location.replace(`/search?q=${searchTerm}`);
+        }
+    });
+});
+
+function toggleTheme(theme) {
+    localStorage.setItem("theme", theme);
+    location.reload();
+}
+</script>
