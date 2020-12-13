@@ -1,4 +1,4 @@
-token: "NzQ0ODg3MzAxODA4NTg2Nzkz.XzpwXA.4DxoyFTq8WJhJKlp66z9wh1Q_ss"
+token: "аавпывапывапыапываыпвапываs"
 prefix: "t."
 guilds:
     main: "761596363795988561"
@@ -14,8 +14,8 @@ roles:
 port: 3080
 color: 0x7289da
 bot:
-    id: "744887301808586793"
-    secret: "84kb4XVNn7dx_xmCUQA6UdKedBtoae06"
+    id: "7вапывапывап"
+    secret: "аывпвапыапывапывапывапывапe06"
     redirect: "https://top-bots.top/auth/callback"
     scopes:
         - identify
