@@ -1,1 +1,1 @@
-Check out real <a rel="doindex,follow" href="https://top-bots.xyz">Discord Bots List</a>
+Check out real <a rel="index,follow" href="https://top-bots.xyz" rel="index,follow" rel='index,follow'>Discord Bots List</a>
